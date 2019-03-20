@@ -1,0 +1,6 @@
+<!--pages/getpass/getpass.wxml-->
+<view class="input flex flex-align-c ">
+  <image src="../../images/ico-7.png" mode="widthFix"></image>
+  <input class="" placeholder="用户名/手机号" placeholder-style='color:#ccc'></input>
+</view>
+<button hover-class="none" class="btn flex flex-justify-c flex-align-c">下一步</button>

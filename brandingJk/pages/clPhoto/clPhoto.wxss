@@ -1,0 +1,70 @@
+/* pages/clPhoto/clPhoto.wxss */
+
+page {
+  padding: 28rpx 28rpx 110rpx;
+  background-color: #f5f8fa;
+}
+
+.box {
+  background-color: #fff;
+  margin-bottom: 28rpx;
+  border-radius: 4px;
+  overflow: hidden;
+  box-shadow: 1px 3px 1px #f0f2f4;
+  padding: 28rpx 34rpx 8rpx;
+}
+
+.boxs {
+  background-color: #fff;
+  overflow: hidden;
+  box-shadow: 1px 3px 1px #f0f2f4;
+  border-radius: 4px;
+  padding: 0 24rpx;
+}
+
+.box .item {
+  width: 136rpx;
+  height: 136rpx;
+  border-radius: 3px;
+  overflow: visible;
+  position: relative;
+  border: solid 1px #e6e9eb;
+  margin: 0 20rpx 24rpx 0;
+}
+
+.box .item .img {
+  width: 136rpx;
+  height: 136rpx;
+  border-radius: 3px;
+}
+
+.box .item .icon {
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 30rpx;
+  transform: translateX(50%) translateY(-50%);
+}
+
+.box .item .add {
+  width: 72rpx;
+}
+
+.boxs .item{
+  padding: 20rpx 0;
+  border-bottom: solid 1px #edf0f2;
+}
+.boxs .item:last-child{
+  border-bottom: none;
+}
+.boxs .item .tit{
+  color: #4c4c4c;
+  font-size: 28rpx;
+  display: block;  line-height: 1.5;
+}
+.boxs .item .text{
+  font-size: 26rpx;
+  color: #999;display: block;
+  line-height: 1.5;
+  padding-top: 6rpx;
+}

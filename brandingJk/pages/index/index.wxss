@@ -1,0 +1,316 @@
+/**index.wxss**/
+
+page {
+  background-color: #f5f8fa;
+}
+
+.p-28 {
+  padding: 0 28rpx;
+}
+
+.tab-box {
+  margin: 28rpx 0 0 0;
+  border-radius: 2em;
+  overflow: hidden;
+  background-color: #fff;
+  box-shadow: 0 0 10px rgba(250, 130, 115, 0.2);
+}
+
+.tab-box .item {
+  line-height: 74rpx;
+  width: 50%;
+  text-align: center;
+  color: #666;
+  font-size: 28rpx;
+}
+
+.tab-box .item.on {
+  color: #fff;
+  background: linear-gradient(to right, #ff66a0, #f78e60);
+  transition: all 0.1s ease-in-out;
+}
+
+.tab-center {
+  display: none;
+}
+
+.tab-center.this {
+  display: block;
+  animation: fadeOut 0.1s ease-in-out;
+}
+
+.tab-center .bingx {
+  border-radius: 8px;
+  overflow: hidden;
+  margin-top: 34rpx;
+  box-shadow: 0 0 10px rgba(250, 130, 115, 0.2);
+}
+
+.tab-center .bingx .ppais-bt {
+  display: block;
+  padding: 12rpx 28rpx;
+  color: #4c4c4c;
+  font-size: 28rpx;
+  line-height: 1.5;
+}
+
+.cotr {
+  margin-top: 28rpx;
+}
+
+.cotr .title {
+  position: relative;
+  border-bottom: 1px solid #ccc;
+}
+
+.cotr .title .txt {
+  color: #666;
+  line-height: 1.5;
+  padding: 16rpx 0;
+}
+
+.cotr .title .icon {
+  position: absolute;
+  width: 40rpx;
+  right: 28rpx;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.rank-nv {
+  overflow: hidden;
+}
+
+.rank-nv .rank-nv-item {
+  border-left-style: solid;
+  border-left-width: 2px;
+  border-left-color: #fff;
+  padding: 24rpx 100rpx 24rpx 30rpx;
+  position: relative;
+  border-bottom: 1px solid #ccc;
+}
+
+.rank-nv .rank-nv-item.d1 {
+  border-left-color: #ff5c64;
+}
+
+.rank-nv .rank-nv-item.d2 {
+  border-left-color: #ff9d7f;
+}
+
+.rank-nv .rank-nv-item.d3 {
+  border-left-color: #66a6ff;
+}
+
+.rank-nv .rank-nv-item .pic {
+  display: inline-block;
+  vertical-align: top;
+  width: 100rpx;
+  height: 100rpx;
+}
+
+.rank-nv .rank-nv-item .info {
+  display: inline-block;
+  vertical-align: top;
+  width: calc(100% - 100rpx);
+  color: #666;
+  padding-left: 30rpx;
+}
+
+.rank-nv .rank-nv-item .info .txt {
+  font-size: 26rpx;
+}
+
+.rank-nv .rank-nv-item .info .num {
+  font-size: 26rpx;
+  padding-top: 2rpx;
+}
+
+.rank-nv .rank-nv-item .paim_down {
+  position: absolute;
+  right: 0;
+  top: 0;
+  z-index: 2;
+  width: 0;
+  height: 0;
+  border-top: 100rpx solid transparent;
+  border-right: 100rpx solid transparent;
+  border-bottom: 100rpx solid #e0e0e0;
+  -webkit-transform: rotate(180deg);
+  -moz-transform: rotate(180deg);
+  -ms-transform: rotate(180deg);
+  -o-transform: rotate(180deg);
+  transform: rotate(180deg);
+}
+
+.rank-nv .rank-nv-item .paim_down.d1 {
+  border-bottom: 100rpx solid #ff5c64;
+}
+
+.rank-nv .rank-nv-item .paim_down.d2 {
+  border-bottom: 100rpx solid #ff9d7f;
+}
+
+.rank-nv .rank-nv-item .paim_down.d3 {
+  border-bottom: 100rpx solid #66a6ff;
+}
+
+.rank-nv .rank-nv-item .paim {
+  position: absolute;
+  right: 0;
+  top: 22rpx;
+  z-index: 3;
+  font-size: 22rpx;
+  color: #fff;
+  -webkit-transform: rotate(45deg);
+  -moz-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  -o-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+
+.cotrs .item {
+  width: calc(50% - 13rpx);
+  border-radius: 6px;
+  overflow: hidden;
+  margin-right: 24rpx;
+  text-align: center;
+  padding: 14rpx 0;
+}
+
+.cotrs .item:nth-child(1) {
+  background: #62d7c8;
+}
+
+.cotrs .item:nth-child(2) {
+  background: #e87474;
+}
+
+.cotrs .item:nth-child(even) {
+  margin-right: 0;
+}
+
+.cotrs .item .icon {
+  width: 42rpx;
+  margin: 2rpx auto;
+}
+
+.cotrs .item text {
+  display: block;
+  color: #fff;
+  padding: 2rpx 0;
+}
+
+.cotrs .item .num {
+  font-size: 26rpx;
+}
+
+.cotrs .item .tit {
+  font-size: 24rpx;
+}
+
+.index-head {
+  padding-top: 28rpx;
+}
+
+.index-head .item {
+  width: calc(50% - 12rpx);
+  background-color: #fff;
+  overflow: hidden;
+  border-radius: 4px;
+  box-shadow: 0 0 10px #f2f5f6;
+  padding: 28rpx 24rpx;
+  margin-bottom: 28rpx;
+}
+
+.index-head .item  text {
+  display: block;
+  line-height: 1.5;
+  white-space: nowrap;
+}
+
+.index-head .item .txt {
+  font-size: 34rpx;
+  color: #333;
+}
+
+.index-head .item .tit {
+  color: #666;
+  font-size: 26rpx;
+  padding-top: 2rpx;
+}
+
+.index-head .item .icon {
+  width: 50rpx;
+  margin-right: 24rpx;
+}
+
+.newrank-box {
+  padding: 28rpx 0 40rpx;
+}
+
+.newrank {
+  background-color: #fff;
+  border-radius: 4px;
+  overflow: hidden;
+  box-shadow: 1px 2px 1px #eff1f3;
+  padding: 0 24rpx;
+}
+
+.newrank .allrank {
+  padding: 0 10rpx;
+  border-bottom: dashed 1px #e6e6e6;
+  height: 94rpx;
+}
+
+.newrank .allrank .tit {
+  font-size: 30rpx;
+  color: #4c4c4c;
+}
+
+.newrank .allrank .icon {
+  width: 12rpx;
+}
+
+.newrank .table .head {
+  border-bottom: dashed 1px #e6e6e6;
+  height: 90rpx;
+  font-size: 28rpx;
+  color: #666;
+}
+
+.newrank .table .head view {
+  text-align: center;
+}
+
+.newrank .table .body {
+  padding: 14rpx 0 30rpx;
+}
+
+.newrank .table .body .item {
+  padding: 16rpx 0;
+}
+
+.newrank .table .body .item view {
+  text-align: center;
+  font-size: 26rpx;
+  color: #0361c0;
+  padding: 0 6rpx;
+}
+
+.newrank .table .body .item image {
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.newrank .table .body .item .icon {
+  width: 24rpx;
+  margin-left: 20rpx;
+}
+
+.newrank .table .body .item .pic {
+  width: 60rpx;
+  height: 60rpx;
+  background-color: #b1bfdc;
+  margin-left: 50rpx;
+}

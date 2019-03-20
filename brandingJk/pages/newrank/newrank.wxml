@@ -1,0 +1,120 @@
+<!--pages/newrank/newrank.wxml-->
+<view class="newrank-box">
+  <view class="newrank">
+    <view class="table">
+      <view class="head flex flex-align-c">
+        <view style="width:26%">销量排行</view>
+        <view style="width:27%">商品名称</view>
+        <view style="width:27%">本月销量</view>
+        <view style="width:20%">库存</view>
+      </view>
+      <view class="body">
+        <block wx:for="{{rank}}" wx:if='{{index<1}}' wx:key="*key">
+          <view class="item flex flex-align-c">
+            <view style="width:26%;text-align:left">
+              <image class="icon" src="../../images/icon-rank1.png" mode="widthFix"></image>
+              <image class="pic" src="{{item.img}}"></image>
+            </view>
+            <view class="line-one" style="width:27%;color:#4c4c4c">{{item.brand_name}}</view>
+            <view style="width:27%">{{item.g_number}}</view>
+            <view style="width:20%">{{item.goods_number}}</view>
+          </view>
+        </block>
+        <block wx:for="{{rank}}" wx:if='{{index== 1}}' wx:key="*key">
+          <view class="item flex flex-align-c">
+            <view style="width:26%;text-align:left">
+              <image class="icon" src="../../images/icon-rank2.png" mode="widthFix"></image>
+              <image class="pic" src="{{item.img}}"></image>
+            </view>
+            <view class="line-one" style="width:27%;color:#4c4c4c">{{item.brand_name}}</view>
+            <view style="width:27%">{{item.g_number}}</view>
+            <view style="width:20%">{{item.goods_number}}</view>
+          </view>
+        </block>
+        <block wx:for="{{rank}}" wx:if='{{index==2}}' wx:key="*key">
+          <view class="item flex flex-align-c">
+            <view style="width:26%;text-align:left">
+              <image class="icon" src="../../images/icon-rank3.png" mode="widthFix"></image>
+              <image class="pic" src="{{item.img}}"></image>
+            </view>
+            <view class="line-one" style="width:27%;color:#4c4c4c">{{item.brand_name}}</view>
+            <view style="width:27%">{{item.g_number}}</view>
+            <view style="width:20%">{{item.goods_number}}</view>
+          </view>
+        </block>
+        <block wx:for="{{rank}}" wx:if='{{index > 2}}' wx:key="*key">
+          <view class="item flex flex-align-c">
+            <view style="width:26%;text-align:left">
+              <image class="icon" src="../../images/white.png" mode="widthFix"></image>
+              <image class="pic" src="{{item.img}}"></image>
+            </view>
+            <view class="line-one" style="width:27%;color:#4c4c4c">{{item.brand_name}}</view>
+            <view style="width:27%">{{item.g_number}}</view>
+            <view style="width:20%">{{item.goods_number}}</view>
+          </view>
+        </block>
+      </view>
+    </view>
+    <!-- <view class="more flex flex-align-c flex-justify-c">
+      <text class="tit">点击加载更多</text>
+      <image class="m-icon" src="../../images/down.png" mode="widthFix"></image>
+    </view> -->
+  </view>
+</view>
+<!-- 
+<view class="newrank-box">
+  <text class="title">铺货用户销量排行</text>
+  <view class="newrank">
+    <view class="table">
+      <view class="head flex flex-align-c">
+        <view style="width:26%">总销量排行</view>
+        <view style="width:27%">品牌名称</view>
+        <view style="width:27%">总订单量</view>
+        <view style="width:20%">热销商品</view>
+      </view>
+      <view class="body">
+        <view class="item flex flex-align-c">
+          <view style="width:26%;text-align:left">
+            <image class="icon" src="../../images/icon-rank1.png" mode="widthFix"></image>
+            <image class="pic" src="https://img.jingku.cn/images/201709/goods_img/4155_G_1504491429293.jpg"></image>
+          </view>
+          <view class="line-one" style="width:27%;color:#4c4c4c">品牌名称品牌名称品牌名称品牌名称品牌名称</view>
+          <view style="width:27%">500</view>
+          <view style="width:20%">50</view>
+        </view>
+        <view class="item flex flex-align-c">
+          <view style="width:26%;text-align:left">
+            <image class="icon" src="../../images/icon-rank2.png" mode="widthFix"></image>
+            <image class="pic" src="https://img.jingku.cn/images/201709/goods_img/4155_G_1504491429293.jpg"></image>
+          </view>
+          <view class="line-one" style="width:27%;color:#4c4c4c">品牌名称</view>
+          <view style="width:27%">500</view>
+          <view style="width:20%">50</view>
+        </view>
+        <view class="item flex flex-align-c">
+          <view style="width:26%;text-align:left">
+            <image class="icon" src="../../images/icon-rank3.png" mode="widthFix"></image>
+            <image class="pic" src="https://img.jingku.cn/images/201607/goods_img/4319_G_1467352137811.jpg"></image>
+          </view>
+          <view style="width:27%;color:#4c4c4c">品牌名称</view>
+          <view style="width:27%">500</view>
+          <view style="width:20%">50</view>
+        </view>
+        <view class="item flex flex-align-c">
+          <view style="width:26%;text-align:left">
+            <!-- <image class="icon" src="../../images/icon-rank3.png" mode="widthFix"></image> -->
+<!--<text class="t-icon">4</text>
+            <image class="pic" src="https://img.jingku.cn/images/201607/goods_img/4319_G_1467352137811.jpg"></image>
+          </view>
+          <view class="line-one" style="width:27%;color:#4c4c4c">品牌名称</view>
+          <view style="width:27%">500</view>
+          <view style="width:20%">50</view>
+        </view>
+      </view>
+    </view>
+    <view class="more flex flex-align-c flex-justify-c">
+      <text class="tit">点击加载更多</text>
+      <image class="m-icon" src="../../images/down.png" mode="widthFix"></image>
+    </view>
+  </view>
+</view> -->

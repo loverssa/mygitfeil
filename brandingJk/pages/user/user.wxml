@@ -1,0 +1,129 @@
+<!--pages/user/user.wxml-->
+<view class="index_top_box">
+  <view class="index_top">
+    <view class="it_h flex flex-align-c ">
+      <view class="pic">
+        <image src="{{info.avatar}}"></image>
+      </view>
+      <view class="info flex flex-column">
+        <text class="name">{{info.true_name}}</text>
+        <text class="last-time">上次登录时间：{{info.last_check}}</text>
+      </view>
+    </view>
+    <view class="it_log flex flex-row-reverse">
+      <navigator hover-class="none" bindtap='exit' class="log flex flex-align-c">
+        <text class="txt">切换账号</text>
+        <image mode="widthFix" src="../../images/bbbb.png" style="width:12rpx"></image>
+      </navigator>
+    </view>
+  </view>
+</view>
+
+<view class="index_order">
+  <view class="order">
+    <view class="order_head flex flex-align-c flex-justify-b">
+      <text class="txt">订单管理</text>
+      <navigator class="flex flex-align-c" hover-class="none" url="../commonOrder/commonOrder?id=0">
+        <text class="tit">查看全部</text>
+        <image class="icon" src="../../images/icon-right.png" mode="widthFix"></image>
+      </navigator>
+    </view>
+    <view class="comBar flex flex-align-c flex-wrap ">
+      <navigator hover-class="none" url="../commonOrder/commonOrder?id=100" class="comBar-item">
+        <image class="icon" mode="widthFix" src="../../images/user-1.png">
+          <!-- <text class="num">0</text> -->
+        </image>
+        <text class="name">待付款</text>
+      </navigator>
+      <navigator hover-class="none" url="../commonOrder/commonOrder?id=101" class="comBar-item">
+        <image class="icon" mode="widthFix" src="../../images/user-2.png">
+          <!-- <text class="num">08</text> -->
+        </image>
+        <text class="name">待发货</text>
+      </navigator>
+      <navigator hover-class="none" url="../commonOrder/commonOrder?id=104" class="comBar-item">
+        <image class="icon" mode="widthFix" src="../../images/user-3.png">
+        </image>
+        <text class="name">部分发货</text>
+      </navigator>
+      <navigator hover-class="none" url="../commonOrder/commonOrder?id=105" class="comBar-item">
+        <image class="icon" mode="widthFix" src="../../images/user-4.png">
+        </image>
+        <text class="name">待收货</text>
+      </navigator>
+      <navigator hover-class="none" url="../commonOrder/commonOrder?id=102" class="comBar-item">
+        <image class="icon" mode="widthFix" src="../../images/user-5.png">
+        </image>
+        <text class="name">已完成</text>
+      </navigator>
+      <navigator hover-class="none" url="../commonOrder/commonOrder?id=2" class="comBar-item">
+        <image class="icon" mode="widthFix" src="../../images/user-6.png">
+        </image>
+        <text class="name">已取消</text>
+      </navigator>
+    </view>
+  </view>
+</view>
+<view class="index_order">
+  <view class="order">
+    <view class="order_head flex flex-align-c flex-justify-b">
+      <text class="txt">铺货订单</text>
+      <navigator class="flex flex-align-c" hover-class="none" url="../disOrder/disOrder?tid=0">
+        <text class="tit">查看全部</text>
+        <image class="icon" src="../../images/icon-right.png" mode="widthFix"></image>
+      </navigator>
+    </view>
+    <view class="comBar bar flex flex-align-c flex-wrap ">
+      <navigator hover-class="none" url="../disOrder/disOrder?tid=1" class="comBar-item flex flex-column flex-justify-b">
+        <image class="icon" mode="widthFix" src="../../images/user-t-1.png">
+        </image>
+        <text class="name">待审核</text>
+      </navigator>
+      <navigator hover-class="none" url="../disOrder/disOrder?tid=2" class="comBar-item flex flex-column flex-justify-b">
+        <image class="icon" mode="widthFix" src="../../images/user-t-2.png">
+        </image>
+        <text class="name">待盖章</text>
+      </navigator>
+      <navigator hover-class="none" url="../disOrder/disOrder?tid=3" class="comBar-item flex flex-column flex-justify-b">
+        <image class="icon" mode="widthFix" src="../../images/user-t-3.png">
+        </image>
+        <text class="name">生效中</text>
+      </navigator>
+      <navigator hover-class="none" url="../disOrder/disOrder?tid=4" class="comBar-item flex flex-column flex-justify-b">
+        <image class="icon" mode="widthFix" src="../../images/user-t-4.png">
+        </image>
+        <text class="name">已失效</text>
+      </navigator>
+    </view>
+  </view>
+</view>
+<!-- <view class="index_order">
+  <view class="order">
+    <view class="order_head flex flex-align-c flex-justify-b">
+      <text class="txt">管理中心</text>
+      <navigator class="flex flex-align-c" hover-class="none">
+        <text class="tit">查看全部</text>
+        <image class="icon" src="../../images/icon-right.png" mode="widthFix"></image>
+      </navigator>
+    </view>
+    <view class="comBar bar flex flex-align-c flex-wrap ">
+      <block wx:for="{{1}}">
+        <view bindtap='exit' hover-class="none" url="" class="comBar-item">
+          <image class="icon" mode="widthFix" src="../../images/go_out.png"></image>
+          <text class="name">退出</text>
+        </view>
+      </block>
+    </view>
+  </view>
+</view> -->
+<!-- <view class="index_order">
+  <view class="order">
+    <navigator class="order_head flex flex-align-c flex-justify-b" hover-class="none" url="../log/log">
+      <text class="txt">日志</text>
+      <view class="flex flex-align-c">
+        <text class="tit">查看全部</text>
+        <image class="icon" src="../../images/icon-right.png" mode="widthFix"></image>
+      </view>
+    </navigator>
+  </view>
+</view> -->

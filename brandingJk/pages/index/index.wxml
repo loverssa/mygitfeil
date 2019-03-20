@@ -1,0 +1,171 @@
+<!--index.wxml-->
+<view class="p-28">
+  <view class="index-head flex flex-wrap flex-align-c flex-justify-b">
+    <view class="item flex flex-align-c flex-justify-b">
+      <view>
+        <text class="txt">{{topCentent.sales_sum}}</text>
+        <text class="tit">总销售额</text>
+      </view>
+      <image class="icon" src="../../images/indexNav-1.png" mode="widthFix"></image>
+    </view>
+    <view class="item flex flex-align-c flex-justify-b">
+      <view>
+        <text class="txt">{{topCentent.distri_order}}</text>
+        <text class="tit">总铺货客户</text>
+      </view>
+      <image class="icon" src="../../images/indexNav-2.png" mode="widthFix"></image>
+    </view>
+    <view class="item flex flex-align-c flex-justify-b">
+      <view>
+        <text class="txt">{{topCentent.order_count}}</text>
+        <text class="tit">总订单量</text>
+      </view>
+      <image class="icon" src="../../images/indexNav-3.png" mode="widthFix"></image>
+    </view>
+    <view class="item flex flex-align-c flex-justify-b">
+      <view>
+        <text class="txt">{{topCentent.suppliers_count}}个</text>
+        <text class="tit">供货商</text>
+      </view>
+      <image class="icon" src="../../images/indexNav-4.png" mode="widthFix"></image>
+    </view>
+  </view>
+</view>
+
+<view class="p-28">
+  <view class="cotrs flex flex-wrap">
+    <view class="item">
+      <image class="icon" mode="widthFix" src="../../images/ico-41.png"></image>
+      <text class="num">{{sales}}</text>
+      <text class="tit">本月销售总额</text>
+    </view>
+    <view class="item">
+      <image class="icon" mode="widthFix" src="../../images/ico-44.png"></image>
+      <text class="num">{{pu_user_count}}</text>
+      <text class="tit">本月铺货客户</text>
+    </view>
+  </view>
+  <view class="tab-box flex flex-align-c">
+    <text class="item {{active == 0 ? 'on':''}}" id="0" bindtap="active">月</text>
+    <text class="item {{active == 1 ? 'on':''}}" id="1" bindtap="active">总</text>
+  </view>
+
+
+  <view class="tab-center this" wx:if="{{active==0}}">
+    <view class="bingx">
+      <text class="ppais-bt">品牌销售统计</text>
+      <view class="canvas-chart" style="height:150px">
+        <view class="container" style="padding-top:10rpx;">
+          <text class="title">{{ message }}</text>
+          <ff-canvas id="guage-dom" canvas-id="guage" opts="{{ opts }}"></ff-canvas>
+        </view>
+      </view>
+    </view>
+    <view class="bingx">
+      <text class="ppais-bt">品牌销售统计</text>
+      <view class="canvas-chart" style="height:250px">
+        <view class="container">
+          <ff-canvas id="column-dom" canvas-id="column" opts="{{ column }}"></ff-canvas>
+        </view>
+      </view>
+    </view>
+  </view>
+
+
+  <view class="tab-center this" wx:if="{{active==1}}">
+    <view class="bingx">
+      <text class="ppais-bt">品牌销售统计</text>
+      <view class="canvas-chart" style="height:150px">
+        <view class="container" style="padding-top:10rpx;">
+          <text class="title">{{ message }}</text>
+          <ff-canvas id="guage-dom" canvas-id="guage" opts="{{ opts2 }}"></ff-canvas>
+        </view>
+      </view>
+    </view>
+    <view class="bingx">
+      <text class="ppais-bt">品牌销售统计</text>
+      <view class="canvas-chart" style="height:250px">
+        <view class="container">
+          <ff-canvas id="column-dom" canvas-id="column" opts="{{ column2 }}"></ff-canvas>
+        </view>
+      </view>
+    </view>
+  </view>
+
+</view>
+
+<!-- <view class="cotr">
+  <view bindtap='showRank' url="../sale_member/sale_member" hover-class="none" class="title flex flex-justify-c flex-align-c">
+    <text class="txt">品牌商品排名 </text>
+    <image class="icon" mode="widthFix" src="../../images/ico-21.png"></image>
+  </view>
+  <view class="rank-nv">
+    <block wx:for="{{rank}}" wx:if='{{index<3}}' wx:key="*key">
+      <view class="rank-nv-item d{{index+1}}">
+        <view class="pic">
+          <image src="{{item.img}}" mode="widthFix"></image>
+        </view>
+        <view class="info flex flex-column">
+          <text class="line-two txt">{{item.goods_name}}</text>
+          <view class="num">本月销量：{{item.g_number}}</view>
+          <view class="paim_down d{{index+1}}"></view>
+          <text class="paim">NO.{{index+1}}</text>
+        </view>
+      </view>
+    </block>
+  </view>
+</view> -->
+
+<view class="p-28">
+  <view class="newrank-box">
+    <view class="newrank">
+      <navigator class="allrank flex flex-align-c flex-justify-b" hover-class="none" url="../newrank/newrank">
+        <text class="tit">销量排行</text>
+        <image class="icon" src="../../images/index-right.png" mode="widthFix"></image>
+      </navigator>
+      <view class="table">
+        <view class="head flex flex-align-c">
+          <view style="width:26%">销量排行</view>
+          <view style="width:27%">品牌名称</view>
+          <view style="width:27%">本月销量</view>
+          <view style="width:20%">库存</view>
+        </view>
+        <view class="body">
+          <block wx:for="{{rank}}" wx:if='{{index<1}}' wx:key="*key">
+            <view class="item flex flex-align-c">
+              <view style="width:26%;text-align:left">
+                <image class="icon" src="../../images/icon-rank1.png" mode="widthFix"></image>
+                <image class="pic" src="{{item.img}}"></image>
+              </view>
+              <view class="line-one" style="width:27%;color:#4c4c4c">{{item.brand_name}}</view>
+              <view style="width:27%">{{item.g_number}}</view>
+              <view style="width:20%">{{item.goods_number}}</view>
+            </view>
+          </block>
+          <block wx:for="{{rank}}" wx:if='{{index== 1}}' wx:key="*key">
+            <view class="item flex flex-align-c">
+              <view style="width:26%;text-align:left">
+                <image class="icon" src="../../images/icon-rank2.png" mode="widthFix"></image>
+                <image class="pic" src="{{item.img}}"></image>
+              </view>
+              <view class="line-one" style="width:27%;color:#4c4c4c">{{item.brand_name}}</view>
+              <view style="width:27%">{{item.g_number}}</view>
+              <view style="width:20%">{{item.goods_number}}</view>
+            </view>
+          </block>
+          <block wx:for="{{rank}}" wx:if='{{index==2}}' wx:key="*key">
+            <view class="item flex flex-align-c">
+              <view style="width:26%;text-align:left">
+                <image class="icon" src="../../images/icon-rank3.png" mode="widthFix"></image>
+                <image class="pic" src="{{item.img}}"></image>
+              </view>
+              <view class="line-one" style="width:27%;color:#4c4c4c">{{item.brand_name}}</view>
+              <view style="width:27%">{{item.g_number}}</view>
+              <view style="width:20%">{{item.goods_number}}</view>
+            </view>
+          </block>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>

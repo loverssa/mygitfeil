@@ -1,0 +1,135 @@
+/* pages/logistics/logistics.wxss */
+
+page {
+  padding: 26rpx 28rpx 0;
+  background-color: #f5f8fa;
+}
+
+.box {
+  border-radius: 3px;
+  overflow: hidden;
+  box-shadow: 1px 2px 1px #eff1f3;
+  background-color: #fff;
+  padding: 20rpx;
+  margin-bottom: 26rpx;
+}
+
+.box .pic {
+  width: 100rpx;
+  height: 100rpx;
+  background-color: #edf0f2;
+  overflow: hidden;
+  border-radius: 3px;
+}
+
+.box .pic image {
+  height: 100%;
+}
+
+.box .info {
+  padding: 10rpx 22rpx;
+  height: 100rpx;
+}
+
+.box .info .txt {
+  color: #666;
+  font-size: 26rpx;
+  line-height: 1.5;
+}
+
+.c {
+  text-align: center;
+}
+
+.l {
+  display: block;
+  font-size: 24rpx;
+}
+
+.s {
+  display: block;
+  font-size: 22rpx;
+}
+
+.c666 {
+  color: #666;
+}
+
+.c999 {
+  color: #999;
+}
+
+.box .list .item .time {
+  padding: 2rpx 0 26rpx 0;
+  position: relative;
+  width: 140rpx;
+  border-right: solid 1px #e1e4e6;
+}
+
+.box .list .item .time text {
+  white-space: nowrap;
+}
+
+.box .list:last-child .item .time {
+  min-height: auto;
+  padding-bottom: 10rpx;
+}
+
+.box .list .item .time .hint {
+  position: absolute;
+  right: 0;
+  top: 0;
+  z-index: 123;
+  width: 36rpx;
+  transform: translateX(50%);
+}
+.box .list .item .time .hint.yunshu{
+  width: 46rpx;
+}
+.box .list .item .time .hint.mmp {
+  display: inline-block;
+  top: 15%;
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background-color: #cdcdcd;
+  transform: translateX(70%);
+}
+
+.box .list .item .contont {
+  padding-left: 34rpx;
+  width: calc(100% - 140rpx);
+  padding-bottom: 14rpx;
+  padding-top: 2rpx;
+}
+.box .list .item:last-child .contont{
+  padding-bottom: 4rpx;
+}
+.box .list .item .contont .tit {
+  color: #4c4c4c;
+  font-size: 26rpx;
+  display: block;
+  line-height: 1.5;
+  padding-bottom: 2rpx;
+}
+
+.box .list .item .contont .txt {
+  color: #4c4c4c;
+  line-height: 1.1;
+  font-size: 24rpx;
+  display: block;
+}
+.nonelogistics{
+  padding: 20% 0 0 ;
+}
+.nonelogistics .img{
+  width: 240rpx;
+  margin: 0 auto
+}
+.nonelogistics  .txt{
+display:block;
+  text-align: center;
+  padding-top: 30rpx;
+  color: #999;
+  font-size: 28rpx;
+}

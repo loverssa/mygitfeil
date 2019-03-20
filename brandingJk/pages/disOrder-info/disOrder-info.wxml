@@ -1,0 +1,222 @@
+<!--pages/disOrder-info/disOrder-info.wxml-->
+<view class="header flex  ">
+  <image class="icon" src="../../images/icon-fin.png" mode="widthFix"></image>
+  <text class="hint">{{info.order_info.distribution_status}}</text>
+  <view class="order">
+    订货单号:{{info.order_info.sn}}
+  </view>
+</view>
+<view class="box">
+  <view class="example">
+    <view class="head border-bottm flex flex-align-c">
+      <image class="icon" src="../../images/icon-order.png" mode="widthFix"></image>
+      <text class="name">{{info.order_info.user_name}}</text>
+    </view>
+    <view class="list">
+      <block wx:for='{{info.goods_list}}' wx:if='{{index<2}}'>
+        <view class="item flex flex-align-c">
+          <view class="pic">
+            <image src="{{item.goods_img}}"></image>
+          </view>
+          <view class="info flex flex-column flex-justify-b">
+            <view class="flex  flex-justify-b">
+              <text class="name">{{item.goods_name}}</text>
+              <text class="price">{{item.formated_real_price}}</text>
+            </view>
+            <view class="flex  flex-justify-b">
+              <text class="run">{{item.old_goods_attr}}</text>
+              <text class="run">X{{item.goods_number}}</text>
+            </view>
+          </view>
+        </view>
+      </block>
+    </view>
+    <view class="checkmore" bindtap='ongengduo' wx:if="{{info.goods_list.length > 2}}">查看更多(商品共{{info.goods_list.length}})件</view>
+    <view class="checkmore dis flex flex-align-c flex-justify-b">
+      <text class="txt">盖章详情</text>
+      <view class="con flex flex-align-c">
+        <image class='borRad' src='../../images/icon-close.png' wx:if="{{info.order_info.zhang_state.user_state == 0}}"></image>
+        <image class='borRad' src='../../images/icon-close3.png'  wx:if="{{info.order_info.zhang_state.user_state == 1}}"></image>
+        <text decode='true'>&nbsp;&nbsp;商家&nbsp;&nbsp;</text>
+        <image class='borRad' src='../../images/icon-close.png'  wx:if="{{info.order_info.zhang_state.supplier_state == 0}}"></image>
+        <image class='borRad' src='../../images/icon-close3.png'  wx:if="{{info.order_info.zhang_state.supplier_state == 1}}"></image>
+        <text decode='true'>&nbsp;&nbsp;供货商&nbsp;&nbsp;</text>
+        <image class='borRad' src='../../images/icon-close.png'  wx:if="{{info.order_info.zhang_state.jk_state == 0}}"></image>
+        <image class='borRad' src='../../images/icon-close3.png'  wx:if="{{info.order_info.zhang_state.jk_state == 1}}"></image>
+        <text decode='true'>&nbsp;&nbsp;镜库&nbsp;&nbsp;</text>
+      </view>
+    </view>
+    <view class="lins">
+      <view class="lin flex flex-align-c flex-justify-b">
+        <text class="tit">支付时间</text>
+        <text class="text">{{info.order_info.add_time}}</text>
+      </view>
+      <view class="lin flex flex-align-c flex-justify-b">
+        <text class="tit">订单金额</text>
+        <text class="text">{{info.order_info.formated_total_fee}}</text>
+      </view>
+      <view class="lin pay flex flex-align-c flex-justify-b">
+        <text class="tit">支付金额</text>
+        <text class="text">{{info.order_info.money_paid}}</text>
+      </view>
+    </view>
+  </view>
+  <view class="example">
+    <view class="down-item">
+      <view class="bargain">
+        <view class="item flex flex-align-c flex-justify-b">
+          <text class="tit" decode>合同开始时间</text>
+          <text class="text">{{info.order_info.contractTime}}</text>
+        </view>
+        <view class="item flex flex-align-c flex-justify-b">
+          <text class="tit" decode>合同结束时间</text>
+          <text class="text">{{info.order_info.endTime}}</text>
+        </view>
+      </view>
+    </view>
+    <view class="down-item">
+      <view class="head flex flex-align-c flex-justify-b">
+        <view class="flex flex-align-c">
+          <image class="icon" src="../../images/icon-order-1.png" mode="widthFix"></image>
+          <text class="name">收货信息</text>
+        </view>
+      </view>
+      <view class="msg">
+        <view class="item">
+          <text class="tit" decode> 收&nbsp;&nbsp;件  人：</text>
+          <text class="text">{{info.order_info.consignee}}</text>
+        </view>
+        <view class="item">
+          <text class="tit">联系电话：</text>
+          <text class="text">{{info.order_info.mobile}}</text>
+        </view>
+        <view class="item">
+          <text class="tit">收货地址：</text>
+          <text class="text">{{info.order_info.province}}-{{info.order_info.city}}-{{info.order_info.district}} {{info.order_info.address}}</text>
+        </view>
+        <view class="item">
+          <text class="tit">发货时间：</text>
+          <text class="text" wx:if='{{info.order_info.shipping_time}}'>{{info.order_info.shipping_time}}</text>
+          <text class="text" wx:else>未发货</text>
+        </view>
+        <view class="item">
+          <text class="tit">收货时间：</text>
+          <text class="text">{{info.order_info.affirm_received_time}}</text>
+        </view>
+      </view>
+
+    </view>
+    <navigator class="down-item flex flex-justify-b flex-align-c" hover-class="none" url="../express/express" url="../logistics/logistics?id={{info.order_info.id}}">
+      <text class="a-tit">物流单号</text>
+      <view class="flex flex-align-c">
+        <text class="a-text">查看物流</text>
+        <image class="a-icon" src="../../images/cion-right.png" mode="widthFix"></image>
+      </view>
+    </navigator>
+    <view class="down-item flex flex-justify-b flex-align-c">
+      <text class="a-tit">近30天补货数量</text>
+      <text class="a-text">{{info.distribution_sales_num}}</text>
+    </view>
+    <!-- <navigator class="down-item flex flex-justify-b flex-align-c" hover-class="none" url="../clPhoto/clPhoto">
+      <text class="a-tit">陈列照片</text>
+      <view class="flex flex-align-c">
+        <text class="a-text">点击查看</text>
+        <image class="a-icon" src="../../images/cion-right.png" mode="widthFix"></image>
+      </view>
+    </navigator> -->
+  </view>
+</view>
+
+<!-- end -->
+<!-- <view class="orderDetails-hint flex flex-justify-b flex-align-c">
+  <text>{{info.order_info.sn}}</text>
+  <text>{{info.order_info.distribution_status}}</text>
+</view>
+<view class="orderDetails-box">
+  <text class="odHead">{{info.order_info.user_name}}</text>
+
+
+  <block wx:for='{{info.goods_list}}' wx:if='{{index<2}}'>
+    <view class="order-item flex flex-align-c">
+      <view class="ordedPic">
+        <image mode="widthFix" src="{{item.goods_img}}"></image>
+      </view>
+      <view class="ordedInfo flex flex-column flex-justify-b">
+        <view class=" flex flex-justify-b">
+          <text class="name line-two">{{item.goods_name}}</text>
+          <text class="price">{{item.formated_real_price}}</text>
+        </view>
+        <view class="children flex flex-justify-b">
+          <view class="guige">{{item.old_goods_attr}}</view>
+          <text>X{{item.goods_number}}</text>
+        </view>
+      </view>
+    </view>
+  </block>
+
+
+  <view class="examineShop" bindtap='lookMore'>查看更多</view>
+  <view class="orderMoney">
+    <view class="orderMoney-item flex flex-align-c flex-justify-b">
+      <text class="tit">支付时间</text>
+      <text class="text">{{info.order_info.add_time}}</text>
+    </view>
+    <view class="orderMoney-item flex flex-align-c flex-justify-b">
+      <text class="tit">订单金额</text>
+      <text class="text">{{info.order_info.formated_goods_amount}}</text>
+    </view>
+    <view class="orderMoney-item flex flex-align-c flex-justify-b">
+      <text class="tit">支付金额</text>
+      <text class="text price">{{info.order_info.money_paid}}</text>
+    </view>
+  </view>
+</view>
+<view class="orderDetails-box">
+  <view class="orderMoney  bargain">
+    <view class="orderMoney-item flex flex-align-c flex-justify-b">
+      <text class="tit">合同开始时间</text>
+      <text class="text">{{info.order_info.contractTime}}</text>
+    </view>
+    <view class="orderMoney-item flex flex-align-c flex-justify-b">
+      <text class="tit">合同结束时间</text>
+      <text class="text">{{info.order_info.endTime}}</text>
+    </view>
+  </view>
+  <view class="orderMoney bargain">
+    <text class="title">收货信息</text>
+    <view class="bargains">
+      <view class="usreInfo flex flex-align-c ">
+        <text class="tit">收件人：</text>
+        <text class="text">{{info.order_info.consignee}}</text>
+      </view>
+      <view class="usreInfo flex flex-align-c ">
+        <text class="tit">联系电话：</text>
+        <text class="text">{{info.order_info.mobile}}</text>
+      </view>
+      <view class="usreInfo flex flex-align-c ">
+        <text class="tit">收货地址：</text>
+        <text class="text">{{info.order_info.province}}-{{info.order_info.city}}-{{info.order_info.district}} {{info.order_info.address}}</text>
+      </view>
+      <view class="usreInfo flex flex-align-c ">
+        <text class="tit">发货时间：</text>
+
+        <text class="text" wx:if='{{info.order_info.shipping_time}}'>{{info.order_info.shipping_time}}</text>
+        <text class="text" wx:else>未发货</text>
+      </view>
+      <view class="usreInfo flex flex-align-c ">
+        <text class="tit">收货时间：</text>
+        <text class="text">{{info.order_info.affirm_received_time}}</text>
+      </view>
+    </view>
+    <view class="bargains">
+      <view class="express-item flex flex-align-c flex-justify-b">
+        <text class="exhint">物流单号</text>
+        <navigator class="lookexi" hover-class="none" url="../logistics/logistics?id={{info.order_info.id}}">查看物流 ></navigator>
+      </view>
+      <view class="express-item flex flex-align-c flex-justify-b">
+        <text class="exhint">近30天补货数量</text>
+        <navigator class="lookexi" hover-class="none" uer="">{{info.distribution_sales_num}}</navigator>
+      </view>
+    </view>
+  </view>
+</view> -->

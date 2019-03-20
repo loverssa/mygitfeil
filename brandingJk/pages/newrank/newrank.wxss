@@ -1,0 +1,111 @@
+/* pages/newrank/newrank.wxss */
+
+page {
+  background-color: #f5f8fa;
+  padding: 0 28rpx;
+}
+
+.newrank-box {
+  padding: 28rpx 0 0;
+}
+
+.newrank {
+  background-color: #fff;
+  border-radius: 4px;
+  overflow: hidden;
+  box-shadow: 1px 2px 1px #eff1f3;
+  padding: 0 24rpx;
+}
+
+.newrank .allrank {
+  padding: 0 10rpx;
+  border-bottom: dashed 1px #e6e6e6;
+  height: 94rpx;
+}
+
+.newrank .allrank .tit {
+  font-size: 30rpx;
+  color: #4c4c4c;
+}
+
+.newrank .allrank .icon {
+  width: 12rpx;
+}
+
+.newrank .table .head {
+  border-bottom: dashed 1px #e6e6e6;
+  height: 90rpx;
+  font-size: 28rpx;
+  color: #666;
+}
+
+.newrank .table .head view {
+  text-align: center;
+}
+
+.newrank .table .body {
+  padding: 14rpx 0 10rpx;
+}
+
+.newrank .table .body .item {
+  padding: 16rpx 0;
+}
+
+.newrank .table .body .item view {
+  text-align: center;
+  font-size: 26rpx;
+  color: #0361c0;
+  padding: 0 6rpx;
+}
+
+.newrank .table .body .item image {
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.newrank .table .body .item .icon {
+  width: 24rpx;
+  margin-left: 20rpx;
+}
+.newrank .table .body .item .t-icon{
+  width: 30rpx;
+  height: 30rpx;
+  margin-left: 16rpx;
+  display:inline-block;
+  vertical-align: middle;
+  color: #fff;
+  background-color: #ff8119;
+  font-size: 22rpx;
+  text-align: center;
+  line-height: 30rpx;
+  border-radius: 50%;
+}
+.newrank .table .body .item .pic {
+  width: 60rpx;
+  height: 60rpx;
+  background-color: #b1bfdc;
+  margin-left: 50rpx;
+}
+
+.newrank .more {
+  border-top: dashed 1px #e6e6e6;
+  height: 70rpx;
+}
+
+.newrank .more .tit {
+  color: #808080;
+  font-size: 26rpx;
+}
+
+.newrank .more .m-icon {
+  width: 20rpx;
+  margin-left: 14rpx;
+}
+
+.newrank-box .title{
+  display: block;
+  color: #000;
+  font-size: 32rpx;
+  font-weight: bold;
+  padding-bottom: 26rpx;
+}

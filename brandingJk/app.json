@@ -1,0 +1,59 @@
+{
+  "pages": [
+    "pages/login/login",
+    "pages/disOrder/disOrder",
+    "pages/spqd/spqd",
+    "pages/newrank/newrank",
+    "pages/sale_member/sale_member",
+    "pages/good/good",
+    "pages/logistics/logistics",
+    "pages/commonOrder/commonOrder",
+    "pages/register/register",
+    "pages/getpass/getpass",
+    "pages/clPhoto/clPhoto",
+    "pages/index/index",
+    "pages/user/user",
+    "pages/commonOrder-info/commonOrder-info",
+    "pages/disOrder-info/disOrder-info",
+    "pages/shoplist/shoplist",
+    "pages/goodlist/goodlist",
+    "pages/log/log"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "WeChat",
+    "navigationBarTextStyle": "black"
+  },
+  "tabBar": {
+    "borderStyle": "black",
+    "backgroundColor": "#fff",
+    "selectedColor": "#ff336d",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "首页",
+        "iconPath": "images/footer-1.png",
+        "selectedIconPath": "images/footer-1_.png"
+      },
+      {
+        "pagePath": "pages/good/good",
+        "text": "铺货商品",
+        "iconPath": "images/footer-2.png",
+        "selectedIconPath": "images/footer-2_.png"
+      },
+      {
+        "pagePath": "pages/log/log",
+        "text": "顾问日志",
+        "iconPath": "images/footer-4.png",
+        "selectedIconPath": "images/footer-4_.png"
+      },
+      {
+        "pagePath": "pages/user/user",
+        "text": "个人中心",
+        "iconPath": "images/footer-4.png",
+        "selectedIconPath": "images/footer-4_.png"
+      }
+    ]
+  }
+}

@@ -1,0 +1,51 @@
+/* pages/login/login.wxss */
+page{
+  padding: 0 60rpx;
+}
+.title{
+  display: block;
+  color: #808080;
+  font-size: 28px;
+  letter-spacing: 4px;
+  padding:  140rpx 0 28rpx 0;
+}
+.input{
+  margin-top: 28rpx;
+  padding: 10rpx  0;
+  border-bottom: 1px solid #ccc;
+}
+.input image{
+  width: 48rpx;
+  margin: 0 10rpx;
+  margin-right: 20rpx;
+}
+.input input{
+  box-sizing: border-box;
+  width: calc(100% - 72rpx);
+  color: #666;
+  min-height: 60rpx;
+  font-size: 28rpx;
+  line-height: 1.5;
+}
+.input input:focus{
+  padding-left: 10rpx;
+    font-size: 28rpx;
+}
+.btn{
+  margin-top: 70rpx;
+  color: #fff;
+  border-radius: 2em;
+  height: 82rpx;
+  background: linear-gradient(to right, #ff66a0 , #f78e60);
+}
+.foot{
+  padding: 32rpx 0;
+  color: #f88869;
+}
+.foot .link{
+  letter-spacing: 1.5px;
+  padding-left: 1.5px;
+}
+.foot .icon{
+  margin: 0 2px;
+}

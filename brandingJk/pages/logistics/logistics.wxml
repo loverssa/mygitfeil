@@ -1,0 +1,60 @@
+<!--pages/logistics/logistics.wxml-->
+
+<view class="showlogistics" wx:if="{{info.list}}">
+  <view class="box flex flex-align-c">
+    <view class="pic">
+      <image src=""></image>
+    </view>
+    <view class="info flex flex-column flex-justify-b">
+      <text class="txt">物流单号：{{info.invoice_no}}</text>
+      <text class="txt">物流公司：{{info.shipping_name}}</text>
+    </view>
+  </view>
+  <view class="box">
+    <view class="list">
+      <block wx:for='{{info.list[0].data}}'>
+
+        <view class="item flex" wx:if='{{item.is_fir==1}}'>
+          <view class="time">
+            <view>
+              <text class="l c c666">{{item.ftime_n}}</text>
+              <text class="s c c999">{{item.ftime_s}}</text>
+            </view>
+            <image wx:if="{{true}}" class="hint" src="../../images/icon-shou.png" mode="widthFix"></image>
+            <text wx:if="{{false}}" class="hint mmp"></text>
+          </view>
+          <view class="contont">
+            <text class="tit">已签收</text>
+            <text class="txt">{{item.context}}</text>
+          </view>
+        </view>
+
+
+
+
+
+        <view class="item flex" wx:else>
+          <view class="time">
+            <view>
+              <text class="l c c666">{{item.ftime_n}}</text>
+              <text class="s c c999">{{item.ftime_s}}</text>
+            </view>
+            <image wx:if="{{false}}" class="hint yunshu" src="../../images/icon-ps.png" mode="widthFix"></image>
+            <text wx:if="{{true}}" class="hint mmp"></text>
+          </view>
+          <view class="contont">
+            <text class="tit">{{item.context}}</text>
+            <text class="txt" wx:if="{{false}}">北京公司 <text style="color:#ff8119"></text>收入</text>
+          </view>
+        </view>
+
+      </block>
+
+    </view>
+  </view>
+</view>
+
+<view class="nonelogistics" wx:if='{{!info.list}}'>
+  <image class="img" src="../../images/icon-nowuliu.png" mode="widthFix"></image>
+  <text class="txt">暂无物流信息</text>
+</view>

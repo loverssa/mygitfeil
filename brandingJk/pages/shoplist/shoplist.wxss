@@ -1,0 +1,28 @@
+/* pages/shoplist/shoplist.wxss */
+
+.list {
+  padding: 20rpx;
+  background: #fff;
+  border-bottom: 1px solid #ccc;
+}
+
+.list .img {
+  width: 160rpx;
+  height: 160rpx;
+}
+
+.list .info {
+  width: calc(100% - 160rpx);
+  height: 160rpx;
+  overflow: hidden;
+  padding-left: 20rpx;
+}
+.list .info .text{
+  color: #2D2929;
+  font-size: 28rpx;
+}
+.list .info .item{
+  padding-top: 6rpx;
+  color: #808080;
+  font-size: 26rpx;
+}

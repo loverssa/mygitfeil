@@ -1,0 +1,69 @@
+<!--pages/log/log.wxml-->
+
+<block wx:for='{{list}}'>
+  <view class="signCon flex">
+    <view class="pic">
+      <image src="{{item.avatar}}"></image>
+    </view>
+    <view class="signBox">
+      <text class="name">{{item.user_name}}</text>
+      <text class="txt">{{item.task_comment}}</text>
+      <view class="sigPic flex flex-wrap " wx:if="{{item.task_img.length > 0}}">
+        <block wx:for='{{item.task_img}}' wx:for-item="img_item">
+          <image class="img" src="{{img_item}}"></image>
+        </block>
+
+      </view>
+      <view class="address_">地址地址地址</view>
+      <view class="sigMsg flex flex-align-c flex-justify-b">
+        <text class="time">{{item.add_time}}</text>
+        <image class="operation" src="../../images/icon_msg01.png" mode="widthFix" bindtap='operation' data-id='{{item.id}}'></image>
+        <view class="zan-pinglun flex" wx:if="{{item.check}}">
+          <view class="item flex flex-align-c" bindtap='zan' data-id='{{item.id}}'>
+            <image class="icon" src="../../images/icon_zan2.png" mode="widthFix"></image>
+            <text class="zp-txt" wx:if='{{item.is_zan==0}}'>点赞</text>
+            <text class="zp-txt" wx:if='{{item.is_zan==1}}'>取消</text>
+          </view>
+          <view class="item flex flex-align-c" bindtap='comment' data-id='{{item.id}}' data-type='0'>
+            <image class="icon" src="../../images/icon_pinlun.png" mode="widthFix"></image>
+            <text class="zp-txt">评论</text>
+          </view>
+        </view>
+      </view>
+      <view class="message">
+        <view class="icon" wx:if='{{item.zan_name}}'></view>
+        <view class="status_zan flex flex-wrap flex-align-c" wx:if='{{item.zan_name}}'>
+          <image class="icon_zan" mode="widthFix" src="../../images/icon_zan.png"></image>
+          <text class="info">{{item.zan_name}}</text>
+        </view>
+        <view class="add_314" wx:if="{{item.comment.length > 0}}">
+          <block wx:for='{{item.comment}}' wx:for-item="comment_item">
+            <view class="message_item " bindtap='comment' data-cid='{{item.id}}' data-id='{{comment_item.id}}' data-type='1'>
+              <text class="names">{{comment_item.user_name}}</text>
+              <text class="text">：{{comment_item.title}}</text>
+            </view>
+
+            <block wx:for='{{comment_item.children}}' wx:for-item="children_item">
+              <view class="message_item " bindtap='comment' data-cid='{{item.id}}' data-id='{{comment_item.id}}' data-type='1'>
+                <text class="names">{{children_item.user_name}}</text>
+                <text class="text">回复</text>
+                <text class="names">{{children_item.hou_name}}</text>
+                <text class="text">：{{children_item.title}}</text>
+              </view>
+            </block>
+
+
+          </block>
+        </view>
+      </view>
+    </view>
+  </view>
+</block>
+
+
+<view class="bott_text " style='margin-bottom:{{height}}px;' wx:if="{{show}}">
+  <view class='textarea'>
+    <textarea fixed placeholder="评论" show-confirm-bar="{{false}}" auto-height adjust-position='{{false}}' bindfocus="onTextareaFocus" bindblur='onTextareaNoFocus' auto-focus='{{true}}' show-confirm-bar='{{false}}' bindinput='content'></textarea>
+  </view>
+  <button class="clibtn publish_btn" hover-class="none" bindtap='submit'>发送</button>
+</view>

@@ -1,0 +1,115 @@
+/* pages/sale_member/sale_member.wxss */
+.cotr{
+  margin-top: 28rpx;
+  padding-bottom: 28rpx;
+}
+
+.cotr .title {
+  position: relative;
+  border-bottom: 1px solid #ccc;
+}
+
+.cotr .title .txt {
+  color: #666;
+  line-height: 1.5;
+  padding: 16rpx 0;
+}
+
+.cotr .title .icon {
+  position: absolute;
+  width: 40rpx;
+  right: 28rpx;
+  top: 50%;
+  transform: translateY(-50%);
+}
+.rank-nv{
+  overflow: hidden;
+}
+.rank-nv .rank-nv-item{
+  border-left-style: solid;
+  border-left-width: 2px;
+  border-left-color: #fff;
+  padding: 24rpx  100rpx 24rpx 30rpx; 
+  position: relative;
+  border-bottom: 1px solid #ccc;
+}
+.rank-nv .rank-nv-item.d1{
+  border-left-color: #ff5c64;
+}
+.rank-nv .rank-nv-item.d2{
+  border-left-color: #ff9d7f;
+}
+.rank-nv .rank-nv-item.d3{
+  border-left-color: #66a6ff;
+}
+.rank-nv .rank-nv-item .pic{
+  display: inline-block;
+  vertical-align: top;
+  width: 100rpx;
+  height: 100rpx;
+}
+.rank-nv .rank-nv-item .info{
+  display: inline-block;
+  vertical-align: top;
+  width: calc(100% - 100rpx);
+  color: #666;
+  padding-left: 30rpx;
+}
+.rank-nv .rank-nv-item .info .txt{
+  font-size: 26rpx;
+}
+.rank-nv .rank-nv-item .info .num{
+font-size: 26rpx;
+padding-top: 2rpx;
+}
+.rank-nv .rank-nv-item .paim_down{
+  position: absolute;
+  right: 0;
+  top: 0;
+  z-index: 2;
+  width: 0;
+  height: 0;
+  border-top: 100rpx solid transparent;
+  border-right: 100rpx solid transparent;
+  border-bottom: 100rpx solid #e0e0e0;
+  -webkit-transform: rotate(180deg);
+  -moz-transform: rotate(180deg);
+  -ms-transform: rotate(180deg);
+  -o-transform: rotate(180deg);
+  transform: rotate(180deg);
+}
+.rank-nv .rank-nv-item .paim_down.d1{
+  border-bottom: 100rpx solid #ff5c64;
+}
+.rank-nv .rank-nv-item .paim_down.d2{
+  border-bottom: 100rpx solid #ff9d7f;
+}
+.rank-nv .rank-nv-item .paim_down.d3{
+  border-bottom: 100rpx solid #66a6ff;
+}
+.rank-nv .rank-nv-item .paim{
+  position: absolute;
+  right: 0;
+  top: 22rpx;
+  z-index: 3;
+  font-size: 22rpx;
+  color: #fff;
+    -webkit-transform: rotate(45deg);
+  -moz-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  -o-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+
+
+.cotrs .item{
+  width: calc(50% - 12rpx);
+  border-radius: 8px;
+  overflow: hidden;
+  margin-right: 24rpx;
+}
+.cotrs .item:nth-child(1){background: #62d7c8;}
+.cotrs .item:nth-child(2){background: #e87474;}
+.cotrs .item:nth-child(even){
+  margin-right: 0;
+}

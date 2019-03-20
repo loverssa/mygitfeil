@@ -1,0 +1,115 @@
+<!--pages/good/good.wxml-->
+<view class="search flex flex-align-c flex-justify-b {{filtrate ? '' : 'fixed'}}">
+  <view class="search-con flex flex-align-c" style="width:{{filtrate ? '':'100%'}}">
+    <icon type="search" size="15" class="icon"></icon>
+    <input class="input" placeholder="搜索商品名称" bindinput='screchClick'></input>
+  </view>
+  <view wx:if="{{filtrate}}" class="filtrate flex flex-align-c flex-justify-c" bindtap="filtrate">
+    <image class="icon" src="../../images/icon-filtrate.png" mode="widthFix"></image>
+  </view>
+</view>
+<view class="navbar">
+  <text class="item {{99999 == cid ? 'on':''}}" id='99999' data-name="0" bindtap='clickUp'>全部</text>
+
+  <text class="item {{index == cid ? 'on':''}}" id='{{index}}' wx:for="{{scrollList}}" wx:key="*key" wx:for-item="itemEnd" data-name="{{itemEnd.brand_id}}" bindtap='clickUp'>{{itemEnd.brand_name}}</text>
+</view>
+<view class="shopCon">
+  <block wx:for="{{list}}" wx:key="*key">
+    <view class="item flex" data-id='{{item.id}}' bindtap='downUpend'>
+      <view class="pic">
+        <image class="img" src="{{item.goods_img}}"></image>
+      </view>
+      <view class="info">
+        <text class="name">{{item.name}}</text>
+        <text class="hint">供货商：{{item.shop_name}}</text>
+        <view class="bottom flex flex-align-c flex-justify-b">
+          <text class="price">{{item.shop_price}}</text>
+          <text class="ex">本月销量：{{item.sales_num}}</text>
+          <text class="ex">库存：{{item.goods_number}}</text>
+        </view>
+      </view>
+    </view>
+  </block>
+</view>
+<!-- <view class="good flex flex-wrap" wx:if="{{active == 1}}">
+  <block wx:for="{{list}}">
+    <navigator class='item' hover-class='none' url='../goodlist/goodlist?id={{item.id}}'>
+      <image class="img" mode="widthFix" src="{{item.goods_img}}"></image>
+      <text class="text line-two">{{item.name}}</text>
+      <text class="price">{{item.shop_price}}</text>
+    </navigator>
+  </block>
+</view>
+<view class="good flex flex-wrap" wx:if="{{active == 0}}">
+  <block wx:for="{{list}}">
+    <navigator class='item' hover-class='none' url='../goodlist/goodlist?id={{item.id}}'>
+      <image class="img" mode="widthFix" src="{{item.goods_img}}"></image>
+      <text class="text line-two">{{item.name}}</text>
+      <text class="price">{{item.shop_price}}</text>
+    </navigator>
+  </block>
+</view>-->
+<!-- <view class="foot fix-foot flex flex-align-c">
+  <text class="item {{active == 1 ? 'on':''}}" id="1" bindtap="getActive">上架中</text>
+  <text class="item {{active == 0 ? 'on':''}}" id="0" bindtap="getActive">下架中</text>
+</view>  -->
+<image class="up {{up ? 'on':''}}" src="../../images/up.png" mode="widthFix" bindtap="up">
+</image>
+<view class="filtrate-box" wx:if="{{!filtrate}}" catchtap="filtrateClose">
+  <view class="filtrate" catchtap="filtrate">
+    <view class="count">
+        <view class="item cle">
+          <view class="head flex flex-align-c flex-justify-b">
+            <text class="name">所有品牌</text>
+            <view class="flex flex-align-c" id="{{index}}" bindtap="seeall" wx:if="{{amount}}">
+              <text class="hint">全部</text>
+              <image class="icon {{moreicon ?  'more' : ''}}" mode="widthFix" src="../../images/icon-down.png"></image>
+            </view>
+          </view>
+          <scroll-view scroll-y="true" style='height:200rpx;'>
+            <view class="body  cle {{more ?  'more' : ''}} ">
+              <block wx:for="{{scrollList}}"wx:key="*key">
+                <text class="fl item  {{index == Conid ? 'on':''}}" bindtap="selected" id="{{index}}" data-name="{{item.brand_id}}">{{item.brand_name}}</text>
+              </block>
+            </view>
+          </scroll-view>
+        </view>
+        <view class="item cle">
+          <view class="head flex flex-align-c flex-justify-b">
+            <text class="name">供货商</text>
+            <view class="flex flex-align-c" id="{{index}}" bindtap="seeallOne" >
+              <text class="hint">全部</text>
+              <image class="icon {{moreicone ?  'more' : ''}}" mode="widthFix" src="../../images/icon-down.png"></image>
+            </view>
+          </view>
+          <scroll-view scroll-y="true" style='height:200rpx;'>
+            <view class="body  cle {{moree ?  'more' : ''}} ">
+              <block wx:for="{{filConOne}}" wx:for-item="listname" wx:key="*key">
+                <text class="fl item {{index == Oneid ? 'on':''}}" bindtap="selectedOne" id="{{index}}"data-name="{{listname.id}}">{{listname.name}}</text>
+              </block>
+            </view>
+          </scroll-view>
+        </view>
+      <block wx:for="{{filConTwo}}"wx:key="*key">
+        <view class="item cle">
+          <view class="head flex flex-align-c flex-justify-b">
+            <text class="name">{{item.name}}</text>
+            <!-- <view class="flex flex-align-c" id="{{index}}" bindtap="seeallTwo" wx:if="{{item.amount}}">
+              <text class="hint">全部</text>
+              <image class="icon {{item.moreicon ?  'more' : ''}}" mode="widthFix" src="../../images/icon-down.png"></image>
+            </view> -->
+          </view>
+          <view class="body  cle {{item.more ?  'more' : ''}} ">
+            <block wx:for="{{item.list.list}}"wx:key="*key">
+              <text class="fl item {{index == Twoid ? 'on':''}}" bindtap="selectedTwo" id="{{index}}"data-name="{{item.brand_id}}">{{item.brand_name}}</text>
+            </block>
+          </view>
+        </view>
+      </block>
+    </view>
+    <view class="btns">
+      <button class="btn reset" hover-class="none" bindtap='onChongZhi'>重置</button>
+      <button class="btn finish" hover-class="none" catchtap="filtrateClose">完成</button>
+    </view>
+  </view>
+</view>

@@ -1,0 +1,49 @@
+/* pages/goodlist/goodlist.wxss */
+
+page {
+  background-color: #f5f5f5;
+}
+
+.tab {
+  background-color: #fff;
+}
+
+.tab .item {
+  height: 86rpx;
+  line-height: 86rpx;
+  color: #666;
+  font-size: 28rpx;
+  padding: 0 6rpx;
+}
+
+.tab .item.on {
+  border-bottom: solid 2px #66a6ff;
+  color: #66a6ff;
+}
+.tabCon{
+  padding:  0 28rpx 28rpx 28rpx;
+}
+.tabCon .item{
+  margin-top: 28rpx;
+  padding:  20rpx;
+  border-radius: 8px;
+  overflow: hidden;
+  background-color: #fff;
+  font-size: 26rpx;
+}
+.tabCon .item .p{
+  padding: 4rpx 0;
+}
+.tabCon .item .title{
+      color: #b2b2b2;
+      text-align: right;
+      width: 5em;
+      line-height: 1.5;
+}
+.tabCon .item .txt{
+      color: #666;
+            line-height: 1.5;
+            white-space: normal;
+            overflow: hidden;
+            text-overflow: ellipsis;
+}

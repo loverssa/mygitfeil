@@ -1,0 +1,237 @@
+/**app.wxss**/
+
+/**app.wxss**/
+
+page, block, view, scroll-view, swiper, movable-view, icon, text, progress,
+button, checkbox, form, input, label, picker, picker-view, radio, slider, switch,
+textarea, navigator, audio, image, video, map, canvas, contact-button {
+  box-sizing: border-box;
+}
+
+/**app.wxss**/
+
+ff-canvas {
+  width: 100%;
+  height: 100%;
+}
+
+.container {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  box-sizing: border-box;
+}
+
+.container .title {
+  display: block;
+  width: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
+  text-align: center;
+  font-size: 28rpx;
+}
+
+button {
+  font-size: 11pt;
+  font-family: inherit;
+  margin: 0;
+  padding: 0;
+}
+
+button::after {
+  border: none;
+}
+
+.cle::after {
+  content: "";
+  display: block;
+  overflow: hidden;
+  clear: both;
+  height: 0;
+  width: 0;
+}
+
+.fl {
+  float: left;
+}
+
+.fr {
+  float: right;
+}
+
+page {
+  font-size: 11pt;
+  font-family: "microsoft yahei", simhei;
+  background-color: #fff;
+}
+
+@-webkit-keyframes fadeOut {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeOut {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+.flex {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.flex-wrap {
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+}
+
+.flex-nowrap {
+  -ms-flex-wrap: nowrap;
+  flex-wrap: nowrap;
+}
+
+.flex-row-reverse {
+  flex-direction: row-reverse;
+}
+
+.flex-column {
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+.flex-align-c {
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.flex-justify-c {
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+}
+
+.flex-justify-b {
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+}
+
+.flex-justify-a {
+  -ms-flex-pack: distribute;
+  justify-content: space-around;
+}
+
+.line-one {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.line-two {
+  text-overflow: -o-ellipsis-lastline;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  line-clamp: 2;
+  -webkit-box-orient: vertical;
+}
+
+.t-l {
+  text-align: left;
+}
+
+.t-r {
+  text-align: right;
+}
+
+.fl {
+  float: left;
+}
+
+.fr {
+  float: right;
+}
+
+image {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.fix-foot {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  z-index: 11111;
+  width: 100%;
+}
+
+/*搜索*/
+
+.search {
+  padding: 16rpx 28rpx;
+  background-color: #fff;
+  box-shadow: 0 2px 4px 2px #eff2f4;
+}
+
+.search .search-con {
+  height: 64rpx;
+  width: calc(100% - 85rpx);
+  border-radius: 3px;
+  background-color: #f1f4f6;
+}
+
+.search .search-con .icon {
+  margin: 0 20rpx;
+}
+
+.search .search-con .input {
+  font-size: 28rpx;
+  width: 100%;
+}
+
+.search .filtrate {
+  width: 64rpx;
+  border-radius: 3px;
+  height: 64rpx;
+  background-color: #f1f4f6;
+}
+
+.search .filtrate .icon {
+  width: 30rpx;
+}
+
+.public-foot-btn {
+  padding: 0 28rpx;
+  padding-bottom: 30rpx;
+  background-color: #f5f8fa;
+}
+
+.public-foot-btn .public-btn {
+  height: 80rpx;
+  line-height: 80rpx;
+  color: #fff;
+  font-size: 30rpx;
+  background: linear-gradient(to right, #ff65a1, #f78d60);
+  box-shadow: 0 1px 2px 1px #faa9c0;
+}

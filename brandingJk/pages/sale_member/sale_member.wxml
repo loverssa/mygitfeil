@@ -1,0 +1,18 @@
+<!--pages/sale_member/sale_member.wxml-->
+<view class="cotr">
+  <view class="rank-nv">
+    <block wx:for="{{rank}}">
+      <view class="rank-nv-item d{{index+1}}">
+        <view class="pic">
+          <image src="{{item.img}}" mode="widthFix"></image>
+        </view>
+        <view class="info flex flex-column">
+          <text class="line-two txt">{{item.goods_name}}</text>
+          <view class="num">本月销量：{{item.g_number}}</view>
+          <view class="paim_down d{{index+1}}"></view>
+          <text class="paim">NO.{{index+1}}</text>
+        </view>
+      </view>
+    </block>
+  </view>
+</view>

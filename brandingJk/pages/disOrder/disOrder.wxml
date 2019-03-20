@@ -1,0 +1,176 @@
+<!--pages/disOrder/disOrder.wxml-->
+<view class="search flex flex-align-c flex-justify-b">
+  <view class="search-con flex flex-align-c">
+    <icon type="search" size="15" class="icon"></icon>
+    <input class="input" placeholder="请输入订单号"></input>
+  </view>
+  <view wx:if="{{filtrate}}" class="filtrate flex flex-align-c flex-justify-c" bindtap="filtrate">
+    <image class="icon" src="../../images/icon-filtrate.png" mode="widthFix"></image>
+  </view>
+</view>
+<view class="phTab flex flex-align-c flex-justify-a">
+  <block wx:for="{{phTab}}" wx:key="*key">
+    <view class="item {{active == index ? 'on':''}}" id="{{index}}" bindtap="getActive">{{item}}</view>
+  </block>
+</view>
+
+<!-- <block wx:for="{{phTab}}" wx:if="{{active == index}}">
+  <view class="phTabCon">
+    <block wx:for="{{list}}">
+      <navigator hover-class="none" class="item" url="../disOrder-info/disOrder-info?id={{item.id}}">
+        <view class="phList_head flex flex-justify-b flex-align-c">
+          <text class="tile">铺货</text>
+          <text class="hint">{{item.distribution_status}}</text>
+        </view>
+        <view class="phList_body">
+          <view class="item flex flex-align-c">
+            <text decode class="title">用&nbsp;&nbsp;户&nbsp;&nbsp;名：</text>
+            <text class="txt">{{item.user_name}}</text>
+          </view>
+          <view class="item flex flex-align-c">
+            <text decode class="title">订&nbsp;&nbsp;单&nbsp;&nbsp;号：</text>
+            <text class="txt">{{item.sn}}</text>
+          </view>
+          <view class="item flex flex-align-c">
+            <text decode class="title" style="letter-spacing:1rpx ">商品名称：</text>
+            <text class="txt">{{item.goods_name}}</text>
+          </view>
+          <view class="item flex flex-align-c">
+            <text decode class="title" style="letter-spacing:1rpx ">数&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;量：</text>
+            <text class="txt">{{item.goods_number}}</text>
+          </view>
+          <view class="item flex flex-align-c">
+            <text decode class="title" style="letter-spacing:1rpx ">铺货金额：</text>
+            <text class="txt">{{item.formated_total_fee}}</text>
+          </view>
+          <view class="item flex flex-align-c">
+            <text decode class="title" style="letter-spacing:1rpx ">下单时间：</text>
+            <text class="txt">{{item.add_time}}</text>
+          </view>
+        </view>
+      </navigator>
+    </block>
+  </view>
+</block> -->
+<view class="navCon">
+  <view class="list" wx:for="{{list}}" wx:for-item="forLift">
+    <navigator class="head flex flex-align-c flex-justify-b" hover-class="none" url="../disOrder-info/disOrder-info?id={{forLift.id}}">
+      <view class="flex flex-align-c ">
+        <image class="tit" mode="widthFix" src="../../images/icon-order.png"></image>
+        <text class="name dencode">{{forLift.address}}</text>
+        <image class="right" mode="widthFix" src="../../images/cion-right.png"></image>
+      </view>
+      <text class="hint o">{{forLift.distribution_status}}</text>
+    </navigator>
+    <view class="center">
+    
+      <view class="item flex flex-align-c">
+        <text class="tit">订  单  号：</text>
+        <text class="text">{{forLift.sn}}</text>
+      </view>
+        <view class="item flex flex-align-c">
+        <text class="tit">商品名称：</text>
+        <text class="text">{{forLift.goods_name}}</text>
+      </view>
+      <view class="item flex flex-align-c">
+        <text class="tit">数量：</text>
+        <text class="text price">{{forLift.goods_number}}</text>
+      </view>
+      <view class="item flex flex-align-c">
+        <text class="tit">订单金额：</text>
+        <text class="text price">{{forLift.formated_total_fee}}</text>
+      </view>
+        <view class="item flex flex-align-c">
+        <text class="tit">下单时间：</text>
+        <text class="text price">{{forLift.add_time}}</text>
+      </view>
+    </view>
+  </view>
+  <!-- <view class="list">
+    <view class="head flex flex-align-c flex-justify-b">
+      <view class="flex flex-align-c">
+        <image class="tit" mode="widthFix" src="../../images/icon-order.png"></image>
+        <text class="name">吉林眼镜批发城</text>
+        <image class="right" mode="widthFix" src="../../images/cion-right.png"></image>
+      </view>
+      <text class="hint t">已完成</text>
+    </view>
+    <view class="center">
+      <view class="item flex flex-align-c">
+        <text class="tit">企  业  名：</text>
+        <text class="text">吉林市新东商城眼镜批发城</text>
+      </view>
+      <view class="item flex flex-align-c">
+        <text class="tit">订  单  号：</text>
+        <text class="text">5465464546546515</text>
+      </view>
+      <view class="item flex flex-align-c">
+        <text class="tit">订单金额：</text>
+        <text class="text price">￥2000.00</text>
+      </view>
+      <view class="item flex flex-align-c">
+        <text class="tit">下单时间：</text>
+        <text class="text price">2019-2-21 15:20:06</text>
+      </view>
+    </view>
+  </view>
+  <view class="list">
+    <view class="head flex flex-align-c flex-justify-b">
+      <view class="flex flex-align-c">
+        <image class="tit" mode="widthFix" src="../../images/icon-order.png"></image>
+        <text class="name">吉林眼镜批发城</text>
+        <image class="right" mode="widthFix" src="../../images/cion-right.png"></image>
+      </view>
+      <text class="hint th">已取消</text>
+    </view>
+    <view class="center">
+      <view class="item flex flex-align-c">
+        <text class="tit">企  业  名：</text>
+        <text class="text">吉林市新东商城眼镜批发城</text>
+      </view>
+      <view class="item flex flex-align-c">
+        <text class="tit">订  单  号：</text>
+        <text class="text">5465464546546515</text>
+      </view>
+      <view class="item flex flex-align-c">
+        <text class="tit">订单金额：</text>
+        <text class="text price">￥2000.00</text>
+      </view>
+      <view class="item flex flex-align-c">
+        <text class="tit">下单时间：</text>
+        <text class="text price">2019-2-21 15:20:06</text>
+      </view> 
+    </view>
+</view>-->
+</view>
+<view class="filtrate-box" wx:if="{{!filtrate}}" catchtap="filtrateClose">
+  <view class="filtrate" catchtap="filtrate">
+    <view class="clie-item flex flex-align-c">
+      <text class="text">订单号</text>
+      <input class="input" placeholder="请输入订单号" placeholder-style="color:#b2b2b2" value='{{cententTxt}}' id="1" bindinput='Input'></input>
+      <image class="clear" src="../../images/icon-close.png" mode="widthFix"></image>
+    </view>
+    <view class="clie-item flex flex-align-c">
+      <text class="text">企业名</text>
+      <input class="input" placeholder="请输入企业名" placeholder-style="color:#b2b2b2"  value='{{cententTxte}}' id="2" bindinput='Input'></input>
+    </view>
+    <view class="clie-item flex flex-align-c">
+      <text class="text">用户名</text>
+      <input class="input" placeholder="请输入用户名"  placeholder-style="color:#b2b2b2"  value='{{cententTxtw}}' id="3" bindinput='Input'></input>
+    </view>
+    <view class="clie-item flex flex-align-c">
+      <text class="text">订单状态</text>
+      <radio-group bindchange="radioClick">
+        <radio value="0">全部订单</radio>
+        <radio value="1">待审核</radio>
+        <radio value="2">待盖章</radio>
+        <radio value="3">生效中</radio>
+        <radio value="4">已失效</radio>
+      </radio-group>
+    </view>
+    <view class="btns">
+      <button class="btn reset" hover-class="none" bindtap='resetClick'>重置</button>
+      <button class="btn finish" hover-class="none" catchtap="onClickSuccess">完成</button>
+    </view>
+  </view>
+</view>

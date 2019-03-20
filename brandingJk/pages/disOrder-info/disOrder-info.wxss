@@ -1,0 +1,410 @@
+/* pages/disOrder-info/disOrder-info.wxss */
+
+page {
+  background-color: #f5f5f5;
+  padding-bottom: 30rpx;
+}
+
+.orderDetails-hint {
+  padding: 0 28rpx;
+  height: 60rpx;
+  background-color: #e9f1fb;
+}
+
+.orderDetails-hint text {
+  color: #666;
+  font-size: 26rpx;
+  line-height: 1.5;
+}
+
+.orderDetails-box {
+  margin: 28rpx 28rpx 0 28rpx;
+  padding: 0 20rpx;
+  border-radius: 8rpx;
+  background-color: #fff;
+  overflow: hidden;
+}
+
+.borRad {
+  width: 40rpx;
+  height: 40rpx;
+  border-radius: 50rpx;
+}
+
+.orderDetails-box .odHead {
+  display: block;
+  padding-left: 10rpx;
+  height: 70rpx;
+  border-bottom: dashed 1px #e6e6e6;
+  color: #333;
+  font-size: 26rpx;
+  line-height: 70rpx;
+}
+
+.orderDetails-box .order-item {
+  padding: 24rpx 0;
+  border-bottom: dashed 1px #e6e6e6;
+}
+
+.orderDetails-box .order-item .ordedPic {
+  border-radius: 5px;
+  border: solid 1px #e6e6e6;
+  overflow: hidden;
+  width: 130rpx;
+  height: 130rpx;
+}
+
+.orderDetails-box .order-item .ordedPic image {
+  height: 100%;
+}
+
+.orderDetails-box .order-item .ordedInfo {
+  width: calc(100% - 130rpx);
+  height: 130rpx;
+  padding: 14rpx 0;
+  padding-left: 20rpx;
+}
+
+.orderDetails-box .order-item .ordedInfo  .name {
+  color: #4c4c4c;
+  font-size: 28rpx;
+  padding-right: 10rpx;
+}
+
+.orderDetails-box .order-item .ordedInfo  .price {
+  color: red;
+  font-size: 24rpx;
+}
+
+.orderDetails-box .order-item .ordedInfo .children {
+  color: #b2b2b2;
+  font-size: 26rpx;
+}
+
+.orderDetails-box .examineShop {
+  border-bottom: dashed 1px #e6e6e6;
+  text-align: center;
+  color: #e8453e;
+  font-size: 26rpx;
+  height: 70rpx;
+  line-height: 70rpx;
+}
+
+.orderDetails-box .orderMoney {
+  padding: 14rpx 10rpx 34rpx 10rpx;
+}
+
+.orderDetails-box .orderMoney .orderMoney-item {
+  height: 46rpx;
+  line-height: 46rpx;
+  font-size: 26rpx;
+  padding: 2rpx 0;
+}
+
+.orderDetails-box .orderMoney .orderMoney-item .tit {
+  color: #b2b2b2;
+}
+
+.orderDetails-box .orderMoney .orderMoney-item .text {
+  color: #666;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.orderDetails-box .orderMoney .orderMoney-item .price {
+  color: red;
+}
+
+.orderDetails-box .orderMoney.bargain {
+  padding: 14rpx 10rpx;
+  border-bottom: dashed 1px #e6e6e6;
+}
+
+.orderDetails-box .orderMoney.bargain:last-child {
+  border-bottom: none;
+}
+
+.orderDetails-box .orderMoney.bargain .title {
+  padding: 6rpx 0;
+  color: #333;
+  font-size: 28rpx;
+}
+
+.orderDetails-box  .usreInfo {
+  overflow: hidden;
+  height: 50rpx;
+  line-height: 50rpx;
+  font-size: 26rpx;
+}
+
+.orderDetails-box  .usreInfo .tit {
+  display: block;
+  width: 140rpx;
+  text-align: right;
+  color: #b2b2b2;
+  white-space: nowrap;
+}
+
+.orderDetails-box  .usreInfo .text {
+  width: calc(100% - 140rpx);
+  color: #666;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.orderDetails-box .bargains {
+  padding-bottom: 10rpx;
+  border-bottom: dashed 1px #e6e6e6;
+}
+
+.orderDetails-box .bargains:last-child {
+  border-bottom: none;
+  padding-bottom: 0;
+}
+
+.orderDetails-box .express-item {
+  padding: 0 10rpx;
+  height: 70rpx;
+  border-bottom: dashed 1px #e6e6e6;
+  line-height: 70rpx;
+  font-size: 26rpx;
+}
+
+.orderDetails-box .express-item .exhint {
+  color: #333;
+}
+
+.orderDetails-box .express-item .lookexi {
+  color: #b2b2b2;
+}
+
+.orderDetails-box .express-item:last-child {
+  border-bottom: none;
+}
+
+.header {
+  padding: 0 28rpx;
+  height: 140rpx;
+  padding-top: 30rpx;
+  background: linear-gradient(to right, #ff65a1, #f78d60);
+  position: relative;
+}
+
+.header .icon {
+  width: 36rpx;
+}
+
+.header  .hint {
+  padding-left: 14rpx;
+  font-size: 30rpx;
+  color: #fff;
+}
+
+.header .order {
+  position: absolute;
+  bottom: -46rpx;
+  left: 28rpx;
+  right: 28rpx;
+  background: #fff;
+  height: 90rpx;
+  border-radius: 3px;
+  box-shadow: 1px 2px 1px #eff1f3;
+  overflow: hidden;
+  padding-left: 40rpx;
+  font-size: 28rpx;
+  color: #666;
+  line-height: 90rpx;
+  white-space: nowrap;
+}
+
+.box {
+  padding: 72rpx 28rpx 28rpx 28rpx;
+}
+
+.box .example {
+  background-color: #fff;
+  border-radius: 4px;
+  padding: 0 24rpx;
+  overflow: hidden;
+  box-shadow: 2px 3px 2px #eff1f3;
+  margin-bottom: 26rpx;
+}
+
+.box .example .head {
+  height: 86rpx;
+}
+
+.box .example .border-bottm {
+  border-bottom: solid 1px #edf0f2;
+}
+
+.box .example .head .icon {
+  width: 34rpx;
+}
+
+.box .example .head .name {
+  padding-left: 14rpx;
+  font-size: 28rpx;
+  color: #4c4c4c;
+}
+
+.box .example .list .item {
+  padding: 22rpx 0;
+  border-bottom: 1px #e6e6e6 dashed;
+}
+
+.box .example .list .item .pic {
+  width: 120rpx;
+  height: 120rpx;
+  border-radius: 3px;
+  overflow: hidden;
+  background-color: #e6e6e6;
+}
+
+.box .example .list .item .pic image {
+  height: 100%;
+}
+
+.box .example .list .item .info {
+  /* height: 120rpx; */
+  width: calc(100% - 120rpx);
+  padding: 16rpx 0;
+  padding-left: 20rpx;
+}
+
+.box .example .list .item .info .name {
+  font-size: 28rpx;
+  color: #4c4c4c;
+  width: 70%;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+
+.box .example .list .item .info .price {
+  color: #ff336d;
+  font-size: 28rpx;
+}
+
+.box .example .list .item .info .run {
+  font-size: 26rpx;
+  color: #b2b2b2;
+}
+
+.box .example .checkmore {
+  font-size: 26rpx;
+  color: #ff336d;
+  border-bottom: 1px #e6e6e6 dashed;
+  text-align: center;
+  line-height: 86rpx;
+}
+
+.box .example .checkmore.dis {
+  padding: 8rpx 0;
+}
+
+.box .example .checkmore .txt {
+  color: #808080;
+}
+
+.box .example .lins {
+  padding: 18rpx 0;
+}
+
+.box .example .lins .lin {
+  padding: 2rpx 0;
+}
+
+.box .example .lins .lin text {
+  line-height: 1.5;
+  font-size: 26rpx;
+}
+
+.box .example .lins .lin .tit {
+  color: #808080;
+}
+
+.box .example .lins .lin .text {
+  color: #666;
+}
+
+.box .example .lins .lin.pay .tit {
+  color: #4c4c4c;
+}
+
+.box .example .lins .lin.pay .text {
+  color: #ff336d;
+}
+
+.box .example .down-item {
+  border-bottom: 1px #e6e6e6 dashed;
+  min-height: 86rpx;
+}
+
+.box .example .down-item:last-child {
+  border-bottom: none;
+}
+
+.box .example .msg  .item {
+  padding: 4rpx 0;
+}
+
+.box .example .express {
+  background: linear-gradient(to right, #41d3b1, #0ac3b8);
+  color: #fff;
+  font-size: 26rpx;
+  border-radius: 3px;
+  line-height: 1.5;
+  padding: 6rpx 16rpx;
+}
+
+.box .example .bargain {
+  padding: 16rpx 0;
+  font-size: 26rpx;
+  padding-left: 48rpx;
+}
+
+.box .example .bargain .item {
+  padding: 4rpx 0;
+}
+
+.box .example .bargain .tit {
+  color: #999;
+}
+
+.box .example .bargain .text {
+  color: #4c4c4c;
+}
+
+.box .example .msg {
+  padding-bottom: 26rpx;
+  padding-left: 48rpx;
+  font-size: 26rpx;
+}
+
+.box .example .msg .tit {
+  color: #999;
+}
+
+.box .example .msg .text {
+  color: #666;
+}
+
+.down-item .a-tit {
+  color: #4c4c4c;
+  font-size: 28rpx;
+  line-height: 1.5;
+}
+
+.down-item .a-text {
+  color: #808080;
+  font-size: 26rpx;
+  line-height: 1.5;
+}
+
+.down-item .a-icon {
+  width: 12rpx;
+  margin-left: 10rpx;
+}

@@ -1,0 +1,17 @@
+<!--pages/shoplist/shoplist.wxml-->
+<block wx:for="{{info}}">
+  <view class="list flex ">
+    <view class="img">
+      <image src="{{item.goods_img}}" mode="widthFix"></image>
+    </view>
+    <view class="info">
+      <text class="text line-two">{{item.goods_name}}</text>
+      <view class="item">
+        单价： <text style="color:#ff6a00">{{item.old_goods_price}}</text>
+      </view>
+      <view class="item">
+        数量： <text style="color:#ff6a00">{{item.goods_number}}</text>
+      </view>
+    </view>
+  </view>
+</block>

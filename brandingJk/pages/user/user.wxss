@@ -1,0 +1,159 @@
+/* pages/user/user.wxss */
+
+page {
+  background-color: #f3f6fc;
+  padding: 0 28rpx 28rpx;
+}
+
+.index_top_box {
+  padding: 28rpx 0;
+}
+
+.index_top {
+  background: url(https://bcrm.jingku.cn/public/images/bcrm_bj.png) no-repeat center center;
+  background-size: 100% auto;
+  overflow: hidden;
+  border-radius: 8px;
+  padding: 28rpx 20rpx;
+  -webkit-box-shadow: 0 10px 10px -2px rgba(209, 214, 249, 0.5);
+  box-shadow: 0 10px 10px -2px rgba(209, 214, 249, 0.5);
+}
+
+.index_top .pic {
+  width: 110rpx;
+  height: 110rpx;
+  border-radius: 50%;
+  overflow: hidden;
+}
+
+.index_top .pic image {
+  height: 100%;
+}
+
+.index_top .info {
+  padding: 16rpx 0;
+  width: calc(100% - 110rpx);
+  height: 110rpx;
+  padding-left: 20rpx;
+  color: #fff;
+}
+
+.index_top .info .name {
+  font-size: 26rpx;
+}
+
+.index_top .info .last-time {
+  padding-top: 10rpx;
+  font-size: 24rpx;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.index_top .it_log {
+  margin-top: 16px;
+  text-align: right;
+  position: relative;
+  margin-right: -20rpx;
+}
+
+.index_top .it_log .log {
+  padding: 0 22rpx;
+  height: 54rpx;
+  background: linear-gradient(to right, #fe6a9b, #fc9d83);
+  border-radius: 2em 0 0 2em;
+}
+
+.index_top .it_log .log .txt {
+  color: #fff;
+  font-size: 26rpx;
+  letter-spacing: 2px;
+  line-height: 1.5;
+  padding-left: 4rpx;
+  margin: 0  8rpx;
+}
+
+.index_order {
+  margin-top: 20rpx;
+  box-shadow: 1px 2px 1px #f5f6f7;
+}
+
+.index_order .order {
+  background-color: #fff;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.index_order .order .order_head {
+  padding: 0 26rpx;
+  height: 90rpx;
+  border-bottom: solid 1px #e6e6e6;
+}
+
+.border-bottom-none {
+  border-bottom: none;
+}
+
+.index_order .order .order_head .txt {
+  color: #333;
+  font-size: 28rpx;
+  line-height: 1.5;
+}
+
+.index_order .order .order_head .tit {
+  color: #999;
+  font-size: 28rpx;
+  line-height: 1.5;
+}
+
+.index_order .order .order_head .icon {
+  width: 16rpx;
+  margin-left: 10rpx;
+}
+
+.index_order .order .comBar {
+  padding: 30rpx 0 0 0;
+}
+
+.index_order .order .comBar .comBar-item {
+  width: 33.333%;
+  text-align: center;
+  margin-bottom: 28rpx;
+  min-height: 96rpx;
+}
+
+.index_order .order .comBar .comBar-item .icon {
+  width: 40rpx;
+  margin: 0 auto;
+  overflow: visible;
+  position: relative;
+}
+
+.index_order .order .comBar .comBar-item .icon .num {
+  position: absolute;
+  right: 0;
+  top: 0;
+  display: inline-block;
+  border-radius: 999px;
+  border: solid 1px #ff336d;
+  color: #ff336d;
+  font-size: 24rpx;
+  min-width: 6px;
+  height: 17px;
+  line-height: 15px;
+  background-color: #fff;
+  padding: 0 4px;
+  transform: translateX(50%) translateY(-50%);
+}
+
+.index_order .order .comBar .comBar-item .name {
+  display: block;
+  margin: 10rpx 0 0 0;
+  color: #666;
+  font-size: 28rpx;
+  line-height: 1.5;
+}
+
+.index_order .order .comBar.bar .comBar-item {
+  width: 25%;
+}

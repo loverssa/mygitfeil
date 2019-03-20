@@ -1,0 +1,58 @@
+/* pages/goodlist/goodlist.wxss */
+
+page {
+  background-color: #f5f8fa;
+}
+
+.box {
+  padding-left: 28rpx;
+  background-color: #fff;
+}
+
+.box .item {
+  padding: 30rpx 0;
+  padding-right: 28rpx;
+  border-bottom: solid 1px #edf0f2;
+}
+
+.box .item:last-child {
+  border-bottom: none;
+}
+
+.box .item .pic {
+  width: 120rpx;
+  height: 120rpx;
+  border-radius: 3px;
+  overflow: hidden;
+  background-color: #e6e6e6;
+}
+
+.box .item .pic image {
+  height: 100%;
+}
+
+.box .item .info {
+  width: calc(100% - 120rpx);
+  height: auto;
+  padding-left: 20rpx;
+}
+.box .item .info .name{
+  white-space: nowrap;
+  display: block;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  color: #4c4c4c;
+  font-size: 28rpx;
+}
+.box .item .info  .down{
+  align-items: flex-end;
+}
+.box .item .info .down .price{
+  color: #333;
+  font-size: 28rpx;
+}
+.box .item .info  .list text{
+  margin-right: 20rpx;
+  color: #808080;
+  font-size: 26rpx;
+}

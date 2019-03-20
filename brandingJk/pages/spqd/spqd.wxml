@@ -1,0 +1,18 @@
+<!--pages/goodlist/goodlist.wxml-->
+<view class="box">
+  <view class="item flex flex-align-c" wx:for="{{info.goods_list}}" wx:key="*key">
+    <view class="pic">
+      <image src="{{item.goods_img}}"></image>
+    </view>
+    <view class="info">
+      <text class="name">{{item.goods_name}}</text>
+      <view class="down flex flex-justify-b">
+        <view class="list flex flex-wrap">
+          <text>{{item.goods_attr}}</text>
+          <text>数量：{{item.goods_number}}</text>
+        </view>
+        <text class="price">{{item.formated_goods_price}}</text>
+      </view>
+    </view>
+  </view>
+</view>

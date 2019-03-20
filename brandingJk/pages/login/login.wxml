@@ -1,0 +1,16 @@
+<!--pages/login/login.wxml-->
+<text class="title">登录</text>
+<view class="input flex flex-align-c ">
+  <image src="../../images/huod_1.png" mode="widthFix"></image>
+  <input class="" placeholder="请输入手机号" placeholder-style='color:#ccc;font-size:28rpx;  line-height: 1.5;' selection-start="1" bindinput='phone'></input>
+</view>
+<view class="input flex flex-align-c ">
+  <image src="../../images/huod_2.png" mode="widthFix"></image>
+  <input class="" placeholder="请输入密码" placeholder-style='color:#ccc;font-size:28rpx; line-height: 1.5;' selection-start="1" bindinput='password' type='password'></input>
+</view>
+<button hover-class="none" class="btn flex flex-justify-c flex-align-c" bindtap='login'>登录</button>
+<!-- <view class="fix-foot foot flex flex-align-c flex-justify-c">
+  <navigator class="link" url="../register/register" hover-class="none">免费注册</navigator>
+  <text class="icon">/</text>
+  <navigator class="link" url="../getpass/getpass" hover-class="none">忘记密码？</navigator>
+</view> -->

@@ -1,0 +1,231 @@
+/* pages/log/log.wxss */
+
+page {
+  padding-bottom: 30rpx;
+}
+
+.signCon {
+  padding: 28rpx 28rpx 20rpx 28rpx;
+  border-bottom: solid 1px #f0f0f0;
+}
+
+.signCon .pic {
+  overflow: hidden;
+  width: 84rpx;
+  height: 84rpx;
+  border-radius: 5px;
+  background-color: #f2f2f2;
+}
+
+.signCon .pic image {
+  height: 100%;
+}
+
+.signCon .signBox {
+  width: calc(100% - 84rpx);
+  padding-left: 18rpx;
+}
+
+.signCon .signBox .name {
+  display: block;
+  font-size: 32rpx;
+  color: #4c5477;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  padding: 2rpx 0;
+  line-height: 1.5;
+}
+
+.signCon .signBox .txt {
+  display: block;
+  color: #4c4c4c;
+  font-size: 26rpx;
+  line-height: 40rpx;
+}
+
+.signCon .signBox .sigPic {
+  margin: 10rpx 0 0;
+  padding-top: 10rpx;
+}
+
+.signCon .signBox .sigPic .img {
+  width: 168rpx;
+  height: 168rpx;
+  margin: 0 12rpx 12rpx 0;
+}
+
+.signCon .signBox .sigMsg {
+  position: relative;
+}
+
+.signCon .signBox .sigMsg .time {
+  color: grey;
+  font-size: 26rpx;
+}
+
+.signCon .signBox .sigMsg .operation {
+  width: 46rpx;
+}
+
+.signCon .signBox .sigMsg .zan-pinglun {
+  position: absolute;
+  top: 50%;
+  right: 58rpx;
+  transform: translateY(-50%);
+  border-radius: 3px;
+  color: #fff;
+  overflow: hidden;
+  background-color: #4d5154;
+  z-index: 123;
+  animation: RightGoLeft 0.1s ease-in-out;
+}
+
+@keyframes RightGoLeft {
+  0% {
+    opacity: 0;
+    right: 46rpx;
+  }
+
+  100% {
+    opacity: 1;
+    right: 58rpx;
+  }
+}
+
+.signCon .signBox .sigMsg .zan-pinglun .item {
+  margin: 12rpx 0;
+  height: 40rpx;
+  border-right: solid 1px #717476;
+  color: #fff;
+  font-size: 26rpx;
+  line-height: 40rpx;
+  padding: 0 26rpx;
+}
+
+.signCon .signBox .sigMsg .zan-pinglun .item:last-child {
+  border-right: none;
+}
+
+.signCon .signBox .sigMsg .zan-pinglun .item .icon {
+  width: 30rpx;
+}
+
+.signCon .signBox .sigMsg .zan-pinglun .item .zp-txt {
+  white-space: nowrap;
+  line-height: 1.5;
+  padding-left: 14rpx;
+}
+
+.signCon .signBox .message {
+  position: relative;
+  margin-top: 20rpx;
+}
+
+.signCon .signBox .message .icon {
+  position: absolute;
+  top: -6px;
+  left: 10px;
+  width: 0;
+  height: 0;
+  border-color: transparent transparent #f3f3f5;
+  border-style: solid;
+  border-width: 0 6px 7px;
+}
+
+.signCon .signBox .message .status_zan {
+   padding: 12rpx 30rpx 12rpx;
+  background-color: #f3f3f5;
+}
+
+.signCon .signBox .message .status_zan .icon_zan {
+  width: 26rpx;
+}
+
+.signCon .signBox .message .status_zan .info {
+  padding-left: 3px;
+  color: #4c5477;
+  line-height: 1.5;
+  font-size: 24rpx;
+}
+
+.signCon .signBox .message .message_item {
+  padding: 0rpx 30rpx 0rpx;
+
+}
+.address_{
+  line-height: 1.5;
+  color: #585f80;
+  font-size: 26rpx;
+  padding: 2rpx 0;
+}
+.add_314 {
+  background-color: #f3f3f5;
+  border-top: solid 1px #ededee;
+}
+.add_314 .message_item:last-child{
+  padding-bottom: 20rpx !important;
+}
+
+
+.signCon .signBox .message  .message_item .names {
+  color: #4c5477;
+  font-size: 24rpx;
+  line-height: 1.5;
+  height: auto;
+}
+
+.signCon .signBox .message  .message_item .text {
+  color: #4c4c4c;
+  font-size: 24rpx;
+  line-height: 1.5;
+  height: auto;
+}
+
+.bott_text {
+  padding: 10px;
+  width: 100%;
+  background: #f5f5f5;
+  position: fixed;
+  bottom: 0px;
+  z-index: 9999;
+  animation: bott_text 0.15s ease-in-out;
+  box-sizing: border-box;
+}
+
+@keyframes bott_text {
+  0% {
+    bottom: -100%;
+    option: 0;
+  }
+
+  100% {
+    bottom: 0;
+    opacity: 1;
+  }
+}
+
+.bott_text .clibtn {
+  height: 30px;
+  width: 45px;
+  line-height: 30px;
+  background: #66a6ff;
+  border: none;
+  color: #fff;
+  border-radius: 5px;
+  font-size: 12px;
+  float: right;
+}
+
+.bott_text .textarea {
+  float: left;
+  padding: 5px;
+  width: 85%;
+  border: 1px solid #e0e0e0;
+  border-radius: 3px;
+  background-color: #fff;
+}
+
+.bott_text .textarea textarea {
+  display: block;
+}

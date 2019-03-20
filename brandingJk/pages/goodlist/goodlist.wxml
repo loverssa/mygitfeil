@@ -1,0 +1,29 @@
+<!--pages/goodlist/goodlist.wxml-->
+<view class="tab flex flex-align-c flex-justify-a">
+  <text class="item {{active == 0 ? 'on':''}}" id="0" bindtap="getActive">全部</text>
+  <text class="item {{active == 1 ? 'on':''}}" id="1" bindtap="getActive">30天</text>
+  <text class="item {{active == 2 ? 'on':''}}" id="2" bindtap="getActive">60天</text>
+  <text class="item {{active == 3 ? 'on':''}}" id="3" bindtap="getActive">90天</text>
+</view>
+<view class="tabCon">
+  <block wx:for="{{list}}">
+    <navigator class="item" hover-class="none" url="../disOrder/disOrder">
+      <view class="p flex flex-align-c">
+        <view class="title">用户名：</view>
+        <text class="txt">{{item.user_name}}</text>
+      </view>
+      <view class="p flex flex-align-c">
+        <view class="title">公司名称：</view>
+        <text class="txt">{{item.company}}</text>
+      </view>
+      <view class="p flex flex-align-c">
+        <view class="title">铺货金额：</view>
+        <text class="txt">{{item.amount}}</text>
+      </view>
+      <view class="p flex flex-align-c">
+        <view class="title">铺货数量：</view>
+        <text class="txt">{{item.g_number}}</text>
+      </view>
+    </navigator>
+  </block>
+</view>

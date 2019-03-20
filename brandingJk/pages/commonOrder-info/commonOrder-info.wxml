@@ -1,0 +1,220 @@
+<!--pages/commonOrder-info/commonOrder-info.wxml-->
+<view class="header flex  ">
+  <image class="icon" src="../../images/icon-fin.png" mode="widthFix"></image>
+  <text class="hint">{{info.order_info.status}}</text>
+  <view class="order">
+    订货单号:{{info.order_info.sn}}
+  </view>
+</view>
+<view class="box">
+  <view class="example">
+    <view class="head border-bottm flex flex-align-c">
+      <image class="icon" src="../../images/icon-order.png" mode="widthFix"></image>
+      <text class="name">{{info.order_info.suppliers_name}}</text>
+    </view>
+    <view class="list">
+      <block wx:for="{{info.goods_list}}">
+        <view class="item flex flex-align-c" wx:if="{{index<2}}">
+          <view class="pic">
+            <image src="{{item.goods_img}}"></image>
+          </view>
+          <view class="info flex flex-column flex-justify-b">
+            <view class="flex  flex-justify-b">
+              <text class="name">{{item.goods_name}}</text>
+              <text class="price">{{item.old_goods_price}}</text>
+            </view>
+            <view class="flex  flex-justify-b">
+              <text class="run">{{item.goods_attr}}</text>
+              <text class="run">x{{item.goods_number}}</text>
+            </view>
+          </view>
+        </view>
+      </block>
+    </view>
+    <view class="checkmore" bindtap='goJumpis'>查看更多(商品共{{info.goods_list.length}})件</view>
+    <view class="lins">
+      <view class="lin flex flex-align-c flex-justify-b">
+        <text class="tit">支付时间</text>
+        <text class="text">{{info.order_info.pay_time}}</text>
+      </view>
+      <view class="lin flex flex-align-c flex-justify-b">
+        <text class="tit">订单金额</text>
+        <text class="text">{{info.order_info.formated_total_fee}}</text>
+      </view>
+      <view class="lin pay flex flex-align-c flex-justify-b">
+        <text class="tit">支付金额</text>
+        <text class="text">{{info.order_info.money_paid}}</text>
+      </view>
+    </view>
+  </view>
+  <view class="example">
+    <view class="down-item">
+      <view class="head flex flex-align-c flex-justify-b">
+        <view class="flex flex-align-c">
+          <image class="icon" src="../../images/icon-order-1.png" mode="widthFix"></image>
+          <text class="name">收货信息</text>
+        </view>
+      </view>
+      <view class="msg">
+        <view class="item">
+          <text class="tit" decode> 收&nbsp;&nbsp;件  人：</text>
+          <text class="text">{{info.order_info.consignee}}</text>
+        </view>
+        <view class="item">
+          <text class="tit">联系电话：</text>
+          <text class="text">{{info.order_info.mobile}}</text>
+        </view>
+        <view class="item">
+          <text class="tit">收货地址：</text>
+          <text class="text">{{info.order_info.address}}</text>
+        </view>
+        <view class="item">
+          <text class="tit">发货时间：</text>
+          <text class="text" wx:if='{{info.order_info.shipping_time == ""}}'>未发货</text>
+          <text class="text" wx:else>{{info.order_info.shipping_time}}</text>
+        </view>
+        <view class="item">
+          <text class="tit">收货时间：</text>
+          <text class="text">{{info.order_info.affirm_received_time}}</text>
+        </view>
+      </view>
+
+    </view>
+    <view class="down-item">
+      <view class="head flex flex-align-c flex-justify-b">
+        <view class="flex flex-align-c">
+          <image class="icon" src="../../images/icon-order-2.png" mode="widthFix"></image>
+          <text class="name">配送方式</text>
+        </view>
+        <navigator class="express" hover-class="none" url="../logistics/logistics?id={{info.order_info.id}}">物流信息</navigator>
+      </view>
+      <view class="msg">
+        <view class="item">
+          <text class="tit" decode>{{info.order_info.shipping_name}}</text>
+        </view>
+        <view class="item">
+          <text class="tit">快递单号：</text>
+          <text class="text">{{info.order_info.invoice_no}}</text>
+        </view>
+      </view>
+
+    </view>
+    <view class="down-item">
+      <view class="head flex flex-align-c flex-justify-b">
+        <view class="flex flex-align-c">
+          <image class="icon" src="../../images/icon-order-2.png" mode="widthFix"></image>
+          <text class="name">支付方式</text>
+        </view>
+      </view>
+      <view class="msg">
+        <view class="item">
+          <text class="tit" decode>{{info.order_info.pay_name}}</text>
+        </view>
+      </view>
+
+    </view>
+    <view class="down-item">
+      <view class="head flex flex-align-c flex-justify-b">
+        <view class="flex flex-align-c">
+          <image class="icon" src="../../images/icon-order-3.png" mode="widthFix"></image>
+          <text class="name">备注信息</text>
+        </view>
+      </view>
+      <view class="msg">
+        <view class="item">
+          <text class="tit" decode>{{info.order_info.postscript}}</text>
+        </view>
+      </view>
+
+    </view>
+  </view>
+</view>
+
+
+
+<!-- <view class="kvs-2">
+  <view class="kvs2-bt flex flex-align-c">
+    <image class="icon" src="../../images/ico-36.png" mode="widthFix"></image>
+    <text class="name">{{info.order_info.suppliers_name}}</text>
+  </view>
+  <view class="kvs2-fbt flex flex-align-c flex-justify-b">
+    <text class="kvs-tcg">订单状态</text>
+    <view class="c-lan">
+      {{info.order_info.status}} -->
+      <!-- 已确认,<text>已付款</text>,未发货 -->
+    <!-- </view>
+  </view>
+  <view class="kvs2-fbt flex flex-align-c flex-justify-b">
+    <text class="kvs-tcg">订单货号</text>
+    <view> {{info.order_info.sn}}</view>
+  </view>
+</view>
+<view class="kvs-1">
+  <view class="kvs-bt flex flex-align-c flex-justify-b">
+    <view class="flex flex-align-c">
+      <image src="../../images/ico-35.png" mode="widthFix" class="icon"></image>
+      <text class="name">订单金额</text>
+    </view>
+    <view>{{info.order_info.money_paid}}</view>
+  </view>
+  <view class="kvs-p1 flex flex-align-c flex-justify-b">
+    <text class="kvs-tcg">支付状态</text>
+    <view class="c-lan">
+      <text>{{info.order_info.pay_status}}</text>
+    </view>
+  </view>
+</view>
+<view class="kvs-2">
+  <view class="kvs2-bt flex flex-justify-b flex-align-c" bindtap='lookMore' hover-class="none" url="../shoplist/shoplist">
+    <view class="flex flex-align-c">
+      <image class="icon" mode="widthFix" src="../../images/ico-36.png"></image>
+      <text class="name normal">商品清单</text>
+    </view>
+    <view class="flex flex-align-c">
+      <text class="num">{{info.order_info.goods_number}}件</text>
+      <image mode="widthFix" class="right" src="../../images/ico-6.png"></image>
+    </view>
+  </view>
+  <view class="kvs2-fbt flex flex-align-c flex-justify-b">
+    <image class="ico-37" mode="widthFix" src="../../images/ico-37.png"></image>
+    <text class="kvs-tcg">收货信息</text>
+    <view>{{info.order_info.consignee}} {{info.order_info.mobile}}</view>
+  </view>
+  <view class="kvs2-p1">
+    {{info.order_info.address}}
+  </view>
+</view>
+<view class="kvs-2" style="border-bottom:none;padding-bottom:0">
+  <view class="kvs2-bt flex flex-justify-b flex-align-c" hover-class="none">
+    <view class="flex flex-align-c">
+      <image class="icon" mode="widthFix" src="../../images/shipping.png"></image>
+      <text class="name normal">配送方式</text>
+    </view>
+    <view class="flex flex-align-c">
+      <text class="num">{{info.order_info.shipping_name}}</text>
+    </view>
+  </view>
+  <navigator class="kvs2-p1 flex  flex-align-c flex-justify-b" style='padding-bottom:10rpx' url="../logistics/logistics?id={{info.order_info.id}}" hover-class="none">
+    <text wx:if='{{info.order_info.invoice_no}}'>快递单号：{{info.order_info.invoice_no}}</text>
+    <text wx:else>快递单号：暂无</text>
+    <view class="red">物流信息</view>
+  </navigator>
+  <view class="kvs2-bt flex flex-justify-b flex-align-c" hover-class="none" style="padding-top:20rpx;border-top:1px solid #ccc">
+    <view class="flex flex-align-c">
+      <image class="icon" mode="widthFix" src="../../images/pay.png"></image>
+      <text class="name normal">支付方式</text>
+    </view>
+    <text class="num">{{info.order_info.pay_name}}</text>
+  </view>
+</view>
+
+
+<view class="kvs-2" style="border-bottom:none;padding-bottom:0">
+  <view class="kvs2-bt flex flex-justify-b flex-align-c">
+    <view class="flex flex-align-c">
+      <image class="icon" mode="widthFix" src="../../images/note.png"></image>
+      <text class="name normal">备注信息</text>
+    </view>
+    <text class="num">{{info.order_info.postscript}}</text>
+  </view>
+</view> -->

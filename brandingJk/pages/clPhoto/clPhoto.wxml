@@ -1,0 +1,29 @@
+<!--pages/clPhoto/clPhoto.wxml-->
+<view class="public-foot-btn fix-foot">
+  <button class="public-btn" hover-class="none" bindtap="addstore">提交</button>
+</view>
+
+<view class="box">
+  <view class="list flex flex-align-c flex-wrap">
+    <block wx:for="{{6}}">
+      <view class="item">
+        <image class="img" src=""></image>
+        <image class="icon" mode="widthFix" src="../../images/icon-close2.png"></image>
+      </view>
+    </block>
+    <view class="item flex flex-align-c flex-justify-c">
+      <image class="add" src="../../images/icon-addpho.png" mode="widthFix"></image>
+    </view>
+  </view>
+</view>
+
+<view class="boxs">
+    <view class="item">
+        <text class="tit">供货商反馈信息：</text>
+        <text class="text">不满意</text>
+    </view>
+       <view class="item">
+        <text class="tit">供货商满意信息：</text>
+        <text class="text">不满意</text>
+    </view>
+</view>
