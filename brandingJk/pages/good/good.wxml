@@ -2,7 +2,7 @@
 <view class="search flex flex-align-c flex-justify-b {{filtrate ? '' : 'fixed'}}">
   <view class="search-con flex flex-align-c" style="width:{{filtrate ? '':'100%'}}">
     <icon type="search" size="15" class="icon"></icon>
-    <input class="input" placeholder="搜索商品名称" bindinput='screchClick'></input>
+    <input class="input" placeholder="搜索商品名称" value='{{screchinput}}'bindconfirm='screchClick' type='text' confirm-type="search" bindinput='screchClicked'></input>
   </view>
   <view wx:if="{{filtrate}}" class="filtrate flex flex-align-c flex-justify-c" bindtap="filtrate">
     <image class="icon" src="../../images/icon-filtrate.png" mode="widthFix"></image>

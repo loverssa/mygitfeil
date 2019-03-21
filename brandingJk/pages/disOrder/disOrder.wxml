@@ -1,19 +1,19 @@
 <!--pages/disOrder/disOrder.wxml-->
-<view class="search flex flex-align-c flex-justify-b">
+<view class="search flex flex-align-c flex-justify-b posizero">
   <view class="search-con flex flex-align-c">
     <icon type="search" size="15" class="icon"></icon>
-    <input class="input" placeholder="请输入订单号"></input>
+    <input class="input" placeholder="请输入订单号" value='{{cententTxt}}' id="1" bindconfirm='goinput' type='text' confirm-type="search"></input>
   </view>
   <view wx:if="{{filtrate}}" class="filtrate flex flex-align-c flex-justify-c" bindtap="filtrate">
     <image class="icon" src="../../images/icon-filtrate.png" mode="widthFix"></image>
   </view>
 </view>
-<view class="phTab flex flex-align-c flex-justify-a">
+<view class="phTab flex flex-align-c flex-justify-a posiniten">
   <block wx:for="{{phTab}}" wx:key="*key">
     <view class="item {{active == index ? 'on':''}}" id="{{index}}" bindtap="getActive">{{item}}</view>
   </block>
 </view>
-
+<view style='height:180rpx;'></view>
 <!-- <block wx:for="{{phTab}}" wx:if="{{active == index}}">
   <view class="phTabCon">
     <block wx:for="{{list}}">
@@ -60,7 +60,8 @@
         <text class="name dencode">{{forLift.address}}</text>
         <image class="right" mode="widthFix" src="../../images/cion-right.png"></image>
       </view>
-      <text class="hint o">{{forLift.distribution_status}}</text>
+      <text class="hint o" wx:if="{{active != 2}}">{{forLift.distribution_status}}</text>
+      <text class="hint o" wx:if="{{active == 2}}">待盖章</text>
     </navigator>
     <view class="center">
     
@@ -83,6 +84,10 @@
         <view class="item flex flex-align-c">
         <text class="tit">下单时间：</text>
         <text class="text price">{{forLift.add_time}}</text>
+      </view>
+       <view class="item flex flex-align-c">
+        <text class="tit">盖章状态：</text>
+        <text class="text price">{{forLift.distribution_status}}</text>
       </view>
     </view>
   </view>
@@ -148,15 +153,17 @@
     <view class="clie-item flex flex-align-c">
       <text class="text">订单号</text>
       <input class="input" placeholder="请输入订单号" placeholder-style="color:#b2b2b2" value='{{cententTxt}}' id="1" bindinput='Input'></input>
-      <image class="clear" src="../../images/icon-close.png" mode="widthFix"></image>
+      <image class="clear" src="../../images/icon-close.png" mode="widthFix"id="1"  bindtap='clickClier'></image>
     </view>
     <view class="clie-item flex flex-align-c">
       <text class="text">企业名</text>
       <input class="input" placeholder="请输入企业名" placeholder-style="color:#b2b2b2"  value='{{cententTxte}}' id="2" bindinput='Input'></input>
+       <image class="clear" src="../../images/icon-close.png" mode="widthFix"id="2"  bindtap='clickClier'></image>
     </view>
     <view class="clie-item flex flex-align-c">
       <text class="text">用户名</text>
       <input class="input" placeholder="请输入用户名"  placeholder-style="color:#b2b2b2"  value='{{cententTxtw}}' id="3" bindinput='Input'></input>
+       <image class="clear" src="../../images/icon-close.png" mode="widthFix"id="3"  bindtap='clickClier'></image>
     </view>
     <view class="clie-item flex flex-align-c">
       <text class="text">订单状态</text>

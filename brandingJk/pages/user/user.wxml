@@ -41,16 +41,16 @@
         </image>
         <text class="name">待发货</text>
       </navigator>
-      <navigator hover-class="none" url="../commonOrder/commonOrder?id=104" class="comBar-item">
+      <!-- <navigator hover-class="none" url="../commonOrder/commonOrder?id=104" class="comBar-item">
         <image class="icon" mode="widthFix" src="../../images/user-3.png">
         </image>
         <text class="name">部分发货</text>
-      </navigator>
-      <navigator hover-class="none" url="../commonOrder/commonOrder?id=105" class="comBar-item">
+      </navigator> -->
+      <!-- <navigator hover-class="none" url="../commonOrder/commonOrder?id=105" class="comBar-item">
         <image class="icon" mode="widthFix" src="../../images/user-4.png">
         </image>
         <text class="name">待收货</text>
-      </navigator>
+      </navigator> -->
       <navigator hover-class="none" url="../commonOrder/commonOrder?id=102" class="comBar-item">
         <image class="icon" mode="widthFix" src="../../images/user-5.png">
         </image>

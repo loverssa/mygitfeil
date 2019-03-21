@@ -1,22 +1,24 @@
 <!--pages/commonOrder/commonOrder.wxml-->
-<view class="search flex flex-align-c flex-justify-b">
+<view class="search flex flex-align-c flex-justify-b posizero">
   <view class="search-con flex flex-align-c">
     <icon type="search" size="15" class="icon"></icon>
-    <input class="input" placeholder="请输入订单号"value='{{cententTxt}}'id="1" bindconfirm='goinput'type='text' confirm-type="search"></input>
+    <input class="input" placeholder="请输入订单号" value='{{cententTxt}}' id="1" bindconfirm='goinput' type='text' confirm-type="search"></input>
   </view>
   <view wx:if="{{filtrate}}" class="filtrate flex flex-align-c flex-justify-c" bindtap="filtrate">
     <image class="icon" src="../../images/icon-filtrate.png" mode="widthFix"></image>
   </view>
 </view>
-<view class="nav flex flex-align-c flex-justify-b">
+<view class="nav flex flex-align-c flex-justify-b posiniten">
   <text class="{{active == 0 ? 'on':''}}" id="0" bindtap="active">所有订单</text>
   <text class="{{active == 100 ? 'on':''}}" id="100" bindtap="active">待付款</text>
   <text class="{{active == 101 ? 'on':''}}" id="101" bindtap="active">待发货</text>
-    <text class="{{active == 104 ? 'on':''}}" id="104" bindtap="active">部分发货</text>
-      <text class="{{active == 105 ? 'on':''}}" id="105" bindtap="active">待收货</text>
+  <!-- <text class="{{active == 104 ? 'on':''}}" id="104" bindtap="active">部分发货</text>
+      <text class="{{active == 105 ? 'on':''}}" id="105" bindtap="active">待收货</text> -->
   <text class="{{active == 102 ? 'on':''}}" id="102" bindtap="active">已完成</text>
   <text class="{{active == 2 ? 'on':''}}" id="2" bindtap="active">已取消</text>
 </view>
+<view style='height:180rpx;'></view>
+<view style="height:1000rpx;background:#999;width:100rpx;" wx:if="{{jjj == 0}}">{{jjjj}}</view>
 <view class="navCon">
   <view class="list" wx:for="{{list}}" wx:for-item="forLift">
     <navigator class="head flex flex-align-c flex-justify-b" hover-class="none" url="../commonOrder-info/commonOrder-info?id={{forLift.id}}">
@@ -112,20 +114,22 @@
   <view class="filtrate" catchtap="filtrate">
     <view class="clie-item flex flex-align-c">
       <text class="text">订单号</text>
-      <input class="input" placeholder="请输入订单号" placeholder-style="color:#b2b2b2" value='{{cententTxt}}'id="1" bindinput='textInput'></input>
-      <image class="clear" src="../../images/icon-close.png" mode="widthFix"></image>
+      <input class="input" placeholder="请输入订单号" placeholder-style="color:#b2b2b2" value='{{cententTxt}}' id="1" bindinput='textInput'></input>
+      <image class="clear" src="../../images/icon-close.png" mode="widthFix" id="1"  bindtap='clickClier'></image>
     </view>
     <view class="clie-item flex flex-align-c">
       <text class="text">企业名</text>
-      <input class="input" placeholder="请输入企业名" placeholder-style="color:#b2b2b2"id="2" value='{{cententTxte}}'bindinput='textInput'></input>
+      <input class="input" placeholder="请输入企业名" placeholder-style="color:#b2b2b2" id="2" value='{{cententTxte}}' bindinput='textInput'></input>
+      <image class="clear" src="../../images/icon-close.png" mode="widthFix"id="2"  bindtap='clickClier'></image>
     </view>
     <view class="clie-item flex flex-align-c">
       <text class="text">用户名</text>
-      <input class="input" placeholder="请输入用户名" placeholder-style="color:#b2b2b2"id="3" value='{{cententTxtw}}'bindinput='textInput'></input>
+      <input class="input" placeholder="请输入用户名" placeholder-style="color:#b2b2b2" id="3" value='{{cententTxtw}}' bindinput='textInput'></input>
+      <image class="clear" src="../../images/icon-close.png" mode="widthFix"id="3"  bindtap='clickClier'></image>
     </view>
     <view class="clie-item flex flex-align-c">
       <text class="text">订单状态</text>
-      <radio-group  bindchange="radioClick">
+      <radio-group bindchange="radioClick">
         <radio value="0">全部订单状态</radio>
         <radio value="100">待付款订单</radio>
         <radio value="101">已付款订单</radio>
@@ -133,7 +137,7 @@
       </radio-group>
     </view>
     <view class="btns">
-      <button class="btn reset" hover-class="none"bindtap='resetClick'>重置</button>
+      <button class="btn reset" hover-class="none" bindtap='resetClick'>重置</button>
       <button class="btn finish" hover-class="none" catchtap="onClickSuccess">完成</button>
     </view>
   </view>
@@ -169,7 +173,7 @@
       <view class="item flex flex-align-c">
         <image class="icon" src="../../images/ico-33.png" mode="widthFix"></image>
         <!-- <text style="color: #ff764c !important; font-weight: bold;">已确认 , <text style="color:#009900">已付款</text> , 发货中(处理分单) -->
-       <!-- <text class="txt">订单状态：{{item.status}}</text>
+<!-- <text class="txt">订单状态：{{item.status}}</text>
       </view>
     </view>
   </view>

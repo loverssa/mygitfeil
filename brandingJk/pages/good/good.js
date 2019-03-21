@@ -81,6 +81,24 @@
      _this.setData({
        screchinput: e.detail.value
      })
+     app.request({
+       url: api.goods.index,
+       data: {
+         keyword: _this.data.screchinput == undefined ? "" : _this.data.screchinput
+       },
+       success(res) {
+         console.log(res);
+         if(res.data.list.length == 0){
+           wx.showToast({
+             title: '没找到相关商品',
+             icon: 'none'
+           })
+         }
+         _this.setData({
+           list: res.data.list
+         })
+       }
+     })
    },
    getgoodList: function() {
      let that = this;
@@ -117,10 +135,23 @@
        },
        success(res) {
          console.log(res);
+         if(res.data.list.length == 0){
+           wx.showToast({
+             title: '没找到相关商品',
+             icon: 'none'
+           })
+         }
          that.setData({
            list: res.data.list
          })
        }
+     })
+   },
+   screchClicked(e){
+     console.log(e)
+     var _this = this
+     _this.setData({
+       screchinput: e.detail.value
      })
    },
    //更多
@@ -185,6 +216,12 @@
        },
        success(res) {
          console.log(res)
+         if (res.data.list.length == 0) {
+           wx.showToast({
+             title: '没找到相关商品',
+             icon: 'none'
+           })
+         }
          _this.setData({
            list: res.data.list
          })
@@ -224,7 +261,7 @@
      var name = e.currentTarget.dataset.name
      if (id == oid) {
        _this.setData({
-         Conid:999,
+         Conid: 999,
          ConText: ""
        })
        console.log(oid)
@@ -277,9 +314,13 @@
    onChongZhi() {
      var _this = this
      _this.setData({
-       Oneid: 0,
-       Twoid: 0,
-       Conid: 0,
+       Conid: 999,
+       Oneid: 999,
+       Twoid: 999,
+       ConText: '',
+       ConOneText: '',
+       ConTwoText: '',
+       screchinput:"",
        amount: true,
        moreicon: false,
        more: false,

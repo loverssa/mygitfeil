@@ -14,7 +14,7 @@ Page({
     var _this = this
     var access_token = wx.getStorageSync("access_token");
     wx.request({
-      url: 'http://bcrm.jingku.cn/public/bcrm/order/info',
+      url: 'https://bcrm.jingku.cn/public/bcrm/order/info',
       method:'POST', 
       header:{'token': access_token,},
       data:{

@@ -33,6 +33,18 @@ page {
   padding-left: 20rpx;
 }
 
+.posizero {
+  position: fixed;
+  top: 0;
+  width: 100%;
+}
+
+.posiniten {
+  position: fixed;
+  top: 90rpx;
+  width: 100%;
+}
+
 .dencode {
   overflow: hidden;
   white-space: nowrap;
